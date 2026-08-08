@@ -297,7 +297,37 @@ INT8/INT4 和 N=1/2/4/8/16/32；每个 N 的 text/image/fused 输出 shape 分�
 - CPU/GPU 跨设备比较必须保留同一 workload、同一 repeat/warmup 和同一电源状态；
 - 生产引用应优先使用 `repeat=20` 或更高的正式结果，不引用探索运行。
 
-## 10. 质量与部署前检查
+## 10. PDF 文档 Embedding 实测
+
+已使用本目录的 `060_OT_Downlook_PR_Error.pdf` 完成与 GME 文档评测对应的 GPU INT8/INT4
+测试。完整方法和原始数据见：
+
+- [document benchmark README](document_embedding_eval_int8_int4_gpu/README.md)
+- [document benchmark JSON](document_embedding_eval_int8_int4_gpu/results/benchmark.json)
+- [document benchmark report](document_embedding_eval_int8_int4_gpu/results/REPORT.md)
+
+本次输入为 14 页 PDF，页面以 150 DPI 渲染。每种 precision 测试 `page_text`、
+`text_chunk_256`、`page_image_150`、`page_fused_150`，batch 档位为 `1/4/8/14`，
+每个单元 repeat=3。结果全部为 native 2048 维。
+
+关键结果：
+
+| Precision | 表示 | batch=4 mean | items/s | Recall@1 | Recall@3 | Recall@5 | MRR |
+|---|---|---:|---:|---:|---:|---:|---:|
+| INT8 | page_text | 539.7 ms | 25.94 | 0.125 | 0.625 | 0.625 | 0.385 |
+| INT8 | text_chunk_256 | 525.7 ms | 26.63 | 0.125 | 0.625 | 0.625 | 0.385 |
+| INT8 | page_image_150 | 50437.5 ms | 0.28 | 0.250 | 0.750 | 0.875 | 0.507 |
+| INT8 | page_fused_150 | 51233.5 ms | 0.27 | 0.125 | 0.625 | 0.625 | 0.406 |
+| INT4 | page_text | 514.4 ms | 27.21 | 0.125 | 0.500 | 0.750 | 0.380 |
+| INT4 | text_chunk_256 | 499.9 ms | 28.00 | 0.125 | 0.500 | 0.750 | 0.380 |
+| INT4 | page_image_150 | 50463.6 ms | 0.28 | 0.250 | 0.750 | 0.750 | 0.497 |
+| INT4 | page_fused_150 | 51105.7 ms | 0.27 | 0.250 | 0.500 | 0.750 | 0.461 |
+
+Qwen3 的 multimodal API 不支持 GME 风格的一次调用内逐行 `(text_i, image_i)` pair，
+所以 image/fused 的 batch 档位采用逐页配对调用分组计时，避免把全部页面图片错误地
+附加到每条文本。该差异和完整解释见文档 benchmark README。
+
+## 11. 质量与部署前检查
 
 本 benchmark 只验证可运行性和性能，不替代以下检查：
 

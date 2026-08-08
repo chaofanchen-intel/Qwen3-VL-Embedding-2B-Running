@@ -1,0 +1,2538 @@
+{
+  "pdf": {
+    "path": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/060_OT_Downlook_PR_Error.pdf",
+    "pages": 14,
+    "file_bytes": 375895,
+    "open_ms": 32.274,
+    "text_extract_ms": {
+      "mean": 4.247,
+      "p50": 3.149,
+      "p95": 10.676,
+      "min": 0.653,
+      "max": 21.478
+    },
+    "text_chars": 5213
+  },
+  "render": {
+    "dpi": 150,
+    "render_ms": {
+      "mean": 112.182,
+      "p50": 109.621,
+      "p95": 139.52,
+      "min": 83.549,
+      "max": 147.517
+    },
+    "image_size_wh": [
+      1500,
+      1125
+    ],
+    "total_bytes": 7517019
+  },
+  "settings": {
+    "device": "GPU",
+    "precisions": [
+      "INT8",
+      "INT4"
+    ],
+    "batches": [
+      1,
+      4,
+      8,
+      14
+    ],
+    "repeats": 3,
+    "chunk_size_tokens": 256,
+    "chunk_overlap_tokens": 64,
+    "dpi": 150,
+    "document_prompt": "Represent the user's input.",
+    "query_prompt": "Represent the user's input."
+  },
+  "inputs": {
+    "page_text": [
+      {
+        "id": "page1",
+        "page": 1,
+        "text": "OT Downlook PR Error\n\n\n\n\n\n                                                                      Version: A",
+        "tokens": 11
+      },
+      {
+        "id": "page2",
+        "page": 2,
+        "text": "Rev.  Items                              Modified by       Date\nA   New Release                    Loeh JD          23DEC2015\n\n\n\n\n\nASM Pacific Technology Ltd. © 2015                        page 2",
+        "tokens": 44
+      },
+      {
+        "id": "page3",
+        "page": 3,
+        "text": "Downlook PR Error\n\n\n Issue:\n    High assist on Down look PR error when running HCC package compare to other\n        smaller package.\n\nHappen:\n   PGAT Link 1-1 2015NOV 4\n\nObservation\n    Halo effect on the edge bump which will causing the inconsistent PR pattern\n      and causing the error. (bump become big)\n\n                              Halo effect at the edge\n\n\n\n\n\nASM Pacific Technology Ltd. © 2015                        page 3",
+        "tokens": 121
+      },
+      {
+        "id": "page4",
+        "page": 4,
+        "text": "Troubleshooting\n\n\nItems to check\n    Flux coverage\n      Check the consistency of flux coverage (spray evenly)\n\n    Substrate used PR learning\n      Make sure substrate use for PR learning is with FLUX.\n\n   PR Criteria check and search window\n      Check the PR criteria and make sure the Cross head is t center of\n          the bump.\n\n\n\n\n      Make larger window for enhance the search area.\n\n\n\n\nASM Pacific Technology Ltd. © 2015                        page 4",
+        "tokens": 123
+      },
+      {
+        "id": "page5",
+        "page": 5,
+        "text": "Troubleshooting\n\n\nPR lighting and threshold\n  To minimize the min area and higher threshold so it will focus on the top\n       contour on the bump which the flux thickness will be more consistent.\n        (note: To small  will be generate false detection when FM present)\n\n\n                                                Threshold ( green)\n                                                Small area ( small blue circle)\n                                                   Big area (Red big circle)\n\n\n\n   Adjust the lighting (0 coaxial light) and make sure the green bump dot\n            is round shape and on its correct contour.\n\n\n\n\n\nASM Pacific Technology Ltd. © 2015                        page 5",
+        "tokens": 130
+      },
+      {
+        "id": "page6",
+        "page": 6,
+        "text": "Troubleshooting\n\n\nVision Proc causing the Downlook PR\n   Symptom of the before the software trigger the vision error is when\n        after learnt the PR on the 1st substrate and manual test the PR on others\n        substrates is fail.\n   To restart the bonder and run the dump file.\n   Send back the operation log and dump file for software team for\n        analysis.\n\n\n\n\n\nTurn on the Vision inspection log\n    If the problem still persist, to turn on the vision inspection log and send\n      back the log file for vision team for analysis.\n\n\n\nASM Pacific Technology Ltd. © 2015                        page 6",
+        "tokens": 150
+      },
+      {
+        "id": "page7",
+        "page": 7,
+        "text": "Vision Log procedure\n\n\n\n   Vision Browser\n1.  Open Vision Service menu and change Log condition to “Always”\n2.   Click Close and\n3.   Perform PR operations until\n    PR error happens again.\n     All PR operations will be                           1\n   saved into browser now\n\n\n\n\n\n                                                 2\n\n\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "tokens": 82
+      },
+      {
+        "id": "page8",
+        "page": 8,
+        "text": "Vision Log procedure\n\n\n  Vision Browser\n3.  Open dialog again and click browser in service dialog\n4.  Click the arrows in browser to browse all logged cases\n\n\n\n                                                 Logged\n                                                    case\n\n\n\n\n\n                                                   Browse next\n                                                 case\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "tokens": 66
+      },
+      {
+        "id": "page9",
+        "page": 9,
+        "text": "Vision Log procedure\n\n\n  Vision Browser\n5.  Find all failure cases in browser and click select\n6.  After selecting all failure cases, click Close\n\n\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "tokens": 51
+      },
+      {
+        "id": "page10",
+        "page": 10,
+        "text": "Vision Log procedure\n\n\n\n   Vision Browser\n7.   Click “Save” in the popped dialog\n8.   Select a folder to store log cases\n9.   Zip everything in that folder and send it to HK vision team\n\n\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "tokens": 65
+      },
+      {
+        "id": "page11",
+        "page": 11,
+        "text": "Vision Log procedure\n\n\n\n  Vision Dump log\n     Save the last ten alignment/inspection PR record to hard disk\n1.  Open Service Menu and click “Copy Dump Files”\n2.  Select a folder to store log cases\n3.   Zip everything in that folder and send it to HK vision team\n\n\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "tokens": 85
+      },
+      {
+        "id": "page12",
+        "page": 12,
+        "text": "Vision Log procedure\n\n\n1.  Open Service Menu and click “Copy System Files”\n2.  Select a folder to store Logs\n3.  Zip everything in that folder and send it to HK vision team\n\n\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "tokens": 58
+      },
+      {
+        "id": "page13",
+        "page": 13,
+        "text": "Vision Log procedure\n\n\n1.  Open Service Menu and click “Copy System Files”\n2.  Select a folder to store Logs\n3.  Zip everything in that folder and send it to HK vision team\n\n\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "tokens": 58
+      },
+      {
+        "id": "page14",
+        "page": 14,
+        "text": "END OF DOCUMENT\n\n\n\n\n\nASM Pacific Technology Ltd. © 2015                        page 14",
+        "tokens": 21
+      }
+    ],
+    "text_chunk_256": [
+      {
+        "id": "page1_chunk0",
+        "page": 1,
+        "text": "OT Downlook PR Error\n\n\n\n\n\n                                                                      Version: A",
+        "tokens": 11
+      },
+      {
+        "id": "page2_chunk0",
+        "page": 2,
+        "text": "Rev.  Items                              Modified by       Date\nA   New Release                    Loeh JD          23DEC2015\n\n\n\n\n\nASM Pacific Technology Ltd. © 2015                        page 2",
+        "tokens": 44
+      },
+      {
+        "id": "page3_chunk0",
+        "page": 3,
+        "text": "Downlook PR Error\n\n\n Issue:\n    High assist on Down look PR error when running HCC package compare to other\n        smaller package.\n\nHappen:\n   PGAT Link 1-1 2015NOV 4\n\nObservation\n    Halo effect on the edge bump which will causing the inconsistent PR pattern\n      and causing the error. (bump become big)\n\n                              Halo effect at the edge\n\n\n\n\n\nASM Pacific Technology Ltd. © 2015                        page 3",
+        "tokens": 121
+      },
+      {
+        "id": "page4_chunk0",
+        "page": 4,
+        "text": "Troubleshooting\n\n\nItems to check\n    Flux coverage\n      Check the consistency of flux coverage (spray evenly)\n\n    Substrate used PR learning\n      Make sure substrate use for PR learning is with FLUX.\n\n   PR Criteria check and search window\n      Check the PR criteria and make sure the Cross head is t center of\n          the bump.\n\n\n\n\n      Make larger window for enhance the search area.\n\n\n\n\nASM Pacific Technology Ltd. © 2015                        page 4",
+        "tokens": 123
+      },
+      {
+        "id": "page5_chunk0",
+        "page": 5,
+        "text": "Troubleshooting\n\n\nPR lighting and threshold\n  To minimize the min area and higher threshold so it will focus on the top\n       contour on the bump which the flux thickness will be more consistent.\n        (note: To small  will be generate false detection when FM present)\n\n\n                                                Threshold ( green)\n                                                Small area ( small blue circle)\n                                                   Big area (Red big circle)\n\n\n\n   Adjust the lighting (0 coaxial light) and make sure the green bump dot\n            is round shape and on its correct contour.\n\n\n\n\n\nASM Pacific Technology Ltd. © 2015                        page 5",
+        "tokens": 130
+      },
+      {
+        "id": "page6_chunk0",
+        "page": 6,
+        "text": "Troubleshooting\n\n\nVision Proc causing the Downlook PR\n   Symptom of the before the software trigger the vision error is when\n        after learnt the PR on the 1st substrate and manual test the PR on others\n        substrates is fail.\n   To restart the bonder and run the dump file.\n   Send back the operation log and dump file for software team for\n        analysis.\n\n\n\n\n\nTurn on the Vision inspection log\n    If the problem still persist, to turn on the vision inspection log and send\n      back the log file for vision team for analysis.\n\n\n\nASM Pacific Technology Ltd. © 2015                        page 6",
+        "tokens": 150
+      },
+      {
+        "id": "page7_chunk0",
+        "page": 7,
+        "text": "Vision Log procedure\n\n\n\n   Vision Browser\n1.  Open Vision Service menu and change Log condition to “Always”\n2.   Click Close and\n3.   Perform PR operations until\n    PR error happens again.\n     All PR operations will be                           1\n   saved into browser now\n\n\n\n\n\n                                                 2\n\n\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "tokens": 82
+      },
+      {
+        "id": "page8_chunk0",
+        "page": 8,
+        "text": "Vision Log procedure\n\n\n  Vision Browser\n3.  Open dialog again and click browser in service dialog\n4.  Click the arrows in browser to browse all logged cases\n\n\n\n                                                 Logged\n                                                    case\n\n\n\n\n\n                                                   Browse next\n                                                 case\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "tokens": 66
+      },
+      {
+        "id": "page9_chunk0",
+        "page": 9,
+        "text": "Vision Log procedure\n\n\n  Vision Browser\n5.  Find all failure cases in browser and click select\n6.  After selecting all failure cases, click Close\n\n\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "tokens": 51
+      },
+      {
+        "id": "page10_chunk0",
+        "page": 10,
+        "text": "Vision Log procedure\n\n\n\n   Vision Browser\n7.   Click “Save” in the popped dialog\n8.   Select a folder to store log cases\n9.   Zip everything in that folder and send it to HK vision team\n\n\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "tokens": 65
+      },
+      {
+        "id": "page11_chunk0",
+        "page": 11,
+        "text": "Vision Log procedure\n\n\n\n  Vision Dump log\n     Save the last ten alignment/inspection PR record to hard disk\n1.  Open Service Menu and click “Copy Dump Files”\n2.  Select a folder to store log cases\n3.   Zip everything in that folder and send it to HK vision team\n\n\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "tokens": 85
+      },
+      {
+        "id": "page12_chunk0",
+        "page": 12,
+        "text": "Vision Log procedure\n\n\n1.  Open Service Menu and click “Copy System Files”\n2.  Select a folder to store Logs\n3.  Zip everything in that folder and send it to HK vision team\n\n\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "tokens": 58
+      },
+      {
+        "id": "page13_chunk0",
+        "page": 13,
+        "text": "Vision Log procedure\n\n\n1.  Open Service Menu and click “Copy System Files”\n2.  Select a folder to store Logs\n3.  Zip everything in that folder and send it to HK vision team\n\n\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "tokens": 58
+      },
+      {
+        "id": "page14_chunk0",
+        "page": 14,
+        "text": "END OF DOCUMENT\n\n\n\n\n\nASM Pacific Technology Ltd. © 2015                        page 14",
+        "tokens": 21
+      }
+    ],
+    "page_image_150": [
+      {
+        "id": "page1",
+        "page": 1,
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_01_150dpi.png"
+      },
+      {
+        "id": "page2",
+        "page": 2,
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_02_150dpi.png"
+      },
+      {
+        "id": "page3",
+        "page": 3,
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_03_150dpi.png"
+      },
+      {
+        "id": "page4",
+        "page": 4,
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_04_150dpi.png"
+      },
+      {
+        "id": "page5",
+        "page": 5,
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_05_150dpi.png"
+      },
+      {
+        "id": "page6",
+        "page": 6,
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_06_150dpi.png"
+      },
+      {
+        "id": "page7",
+        "page": 7,
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_07_150dpi.png"
+      },
+      {
+        "id": "page8",
+        "page": 8,
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_08_150dpi.png"
+      },
+      {
+        "id": "page9",
+        "page": 9,
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_09_150dpi.png"
+      },
+      {
+        "id": "page10",
+        "page": 10,
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_10_150dpi.png"
+      },
+      {
+        "id": "page11",
+        "page": 11,
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_11_150dpi.png"
+      },
+      {
+        "id": "page12",
+        "page": 12,
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_12_150dpi.png"
+      },
+      {
+        "id": "page13",
+        "page": 13,
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_13_150dpi.png"
+      },
+      {
+        "id": "page14",
+        "page": 14,
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_14_150dpi.png"
+      }
+    ],
+    "page_fused_150": [
+      {
+        "id": "page1",
+        "page": 1,
+        "text": "OT Downlook PR Error\n\n\n\n\n\n                                                                      Version: A",
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_01_150dpi.png",
+        "tokens": 11
+      },
+      {
+        "id": "page2",
+        "page": 2,
+        "text": "Rev.  Items                              Modified by       Date\nA   New Release                    Loeh JD          23DEC2015\n\n\n\n\n\nASM Pacific Technology Ltd. © 2015                        page 2",
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_02_150dpi.png",
+        "tokens": 44
+      },
+      {
+        "id": "page3",
+        "page": 3,
+        "text": "Downlook PR Error\n\n\n Issue:\n    High assist on Down look PR error when running HCC package compare to other\n        smaller package.\n\nHappen:\n   PGAT Link 1-1 2015NOV 4\n\nObservation\n    Halo effect on the edge bump which will causing the inconsistent PR pattern\n      and causing the error. (bump become big)\n\n                              Halo effect at the edge\n\n\n\n\n\nASM Pacific Technology Ltd. © 2015                        page 3",
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_03_150dpi.png",
+        "tokens": 121
+      },
+      {
+        "id": "page4",
+        "page": 4,
+        "text": "Troubleshooting\n\n\nItems to check\n    Flux coverage\n      Check the consistency of flux coverage (spray evenly)\n\n    Substrate used PR learning\n      Make sure substrate use for PR learning is with FLUX.\n\n   PR Criteria check and search window\n      Check the PR criteria and make sure the Cross head is t center of\n          the bump.\n\n\n\n\n      Make larger window for enhance the search area.\n\n\n\n\nASM Pacific Technology Ltd. © 2015                        page 4",
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_04_150dpi.png",
+        "tokens": 123
+      },
+      {
+        "id": "page5",
+        "page": 5,
+        "text": "Troubleshooting\n\n\nPR lighting and threshold\n  To minimize the min area and higher threshold so it will focus on the top\n       contour on the bump which the flux thickness will be more consistent.\n        (note: To small  will be generate false detection when FM present)\n\n\n                                                Threshold ( green)\n                                                Small area ( small blue circle)\n                                                   Big area (Red big circle)\n\n\n\n   Adjust the lighting (0 coaxial light) and make sure the green bump dot\n            is round shape and on its correct contour.\n\n\n\n\n\nASM Pacific Technology Ltd. © 2015                        page 5",
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_05_150dpi.png",
+        "tokens": 130
+      },
+      {
+        "id": "page6",
+        "page": 6,
+        "text": "Troubleshooting\n\n\nVision Proc causing the Downlook PR\n   Symptom of the before the software trigger the vision error is when\n        after learnt the PR on the 1st substrate and manual test the PR on others\n        substrates is fail.\n   To restart the bonder and run the dump file.\n   Send back the operation log and dump file for software team for\n        analysis.\n\n\n\n\n\nTurn on the Vision inspection log\n    If the problem still persist, to turn on the vision inspection log and send\n      back the log file for vision team for analysis.\n\n\n\nASM Pacific Technology Ltd. © 2015                        page 6",
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_06_150dpi.png",
+        "tokens": 150
+      },
+      {
+        "id": "page7",
+        "page": 7,
+        "text": "Vision Log procedure\n\n\n\n   Vision Browser\n1.  Open Vision Service menu and change Log condition to “Always”\n2.   Click Close and\n3.   Perform PR operations until\n    PR error happens again.\n     All PR operations will be                           1\n   saved into browser now\n\n\n\n\n\n                                                 2\n\n\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_07_150dpi.png",
+        "tokens": 82
+      },
+      {
+        "id": "page8",
+        "page": 8,
+        "text": "Vision Log procedure\n\n\n  Vision Browser\n3.  Open dialog again and click browser in service dialog\n4.  Click the arrows in browser to browse all logged cases\n\n\n\n                                                 Logged\n                                                    case\n\n\n\n\n\n                                                   Browse next\n                                                 case\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_08_150dpi.png",
+        "tokens": 66
+      },
+      {
+        "id": "page9",
+        "page": 9,
+        "text": "Vision Log procedure\n\n\n  Vision Browser\n5.  Find all failure cases in browser and click select\n6.  After selecting all failure cases, click Close\n\n\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_09_150dpi.png",
+        "tokens": 51
+      },
+      {
+        "id": "page10",
+        "page": 10,
+        "text": "Vision Log procedure\n\n\n\n   Vision Browser\n7.   Click “Save” in the popped dialog\n8.   Select a folder to store log cases\n9.   Zip everything in that folder and send it to HK vision team\n\n\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_10_150dpi.png",
+        "tokens": 65
+      },
+      {
+        "id": "page11",
+        "page": 11,
+        "text": "Vision Log procedure\n\n\n\n  Vision Dump log\n     Save the last ten alignment/inspection PR record to hard disk\n1.  Open Service Menu and click “Copy Dump Files”\n2.  Select a folder to store log cases\n3.   Zip everything in that folder and send it to HK vision team\n\n\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_11_150dpi.png",
+        "tokens": 85
+      },
+      {
+        "id": "page12",
+        "page": 12,
+        "text": "Vision Log procedure\n\n\n1.  Open Service Menu and click “Copy System Files”\n2.  Select a folder to store Logs\n3.  Zip everything in that folder and send it to HK vision team\n\n\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_12_150dpi.png",
+        "tokens": 58
+      },
+      {
+        "id": "page13",
+        "page": 13,
+        "text": "Vision Log procedure\n\n\n1.  Open Service Menu and click “Copy System Files”\n2.  Select a folder to store Logs\n3.  Zip everything in that folder and send it to HK vision team\n\n\n\n\n\n                                     ASM Pacific Technology Ltd. ©\n                                                         2012",
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_13_150dpi.png",
+        "tokens": 58
+      },
+      {
+        "id": "page14",
+        "page": 14,
+        "text": "END OF DOCUMENT\n\n\n\n\n\nASM Pacific Technology Ltd. © 2015                        page 14",
+        "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/document_embedding_eval_int8_int4_gpu/pages/page_14_150dpi.png",
+        "tokens": 21
+      }
+    ],
+    "token_stats": {
+      "page_text": {
+        "count": 14,
+        "min": 11,
+        "p50": 65.5,
+        "mean": 76.071,
+        "max": 150
+      },
+      "text_chunk_256": {
+        "count": 14,
+        "min": 11,
+        "p50": 65.5,
+        "mean": 76.071,
+        "max": 150
+      }
+    }
+  },
+  "models": {
+    "INT8": {
+      "model_dir": "/home/chaofan/model_benchmark/benchmark/models/Qwen3-VL-Embedding-2B-INT8",
+      "precision": "INT8",
+      "device": "GPU",
+      "model_load_ms": 6718.148,
+      "embedding_dim": 2048,
+      "performance": {
+        "page_text": {
+          "kind": "text",
+          "items": 14,
+          "rows": [
+            {
+              "batch_size": 1,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 854.744,
+                "p50": 855.113,
+                "p95": 855.661,
+                "min": 853.396,
+                "max": 855.722
+              },
+              "items_per_sec": 16.379,
+              "tokens": 1065,
+              "tokens_per_sec": 1245.988,
+              "rss_peak_mb": 530.965,
+              "batch_semantics": "true text batch; one embed call per chunk"
+            },
+            {
+              "batch_size": 4,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 539.701,
+                "p50": 534.303,
+                "p95": 560.738,
+                "min": 521.123,
+                "max": 563.676
+              },
+              "items_per_sec": 25.94,
+              "tokens": 1065,
+              "tokens_per_sec": 1973.316,
+              "rss_peak_mb": 530.469,
+              "batch_semantics": "true text batch; one embed call per chunk"
+            },
+            {
+              "batch_size": 8,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 550.962,
+                "p50": 537.31,
+                "p95": 579.453,
+                "min": 531.44,
+                "max": 584.135
+              },
+              "items_per_sec": 25.41,
+              "tokens": 1065,
+              "tokens_per_sec": 1932.983,
+              "rss_peak_mb": 645.242,
+              "batch_semantics": "true text batch; one embed call per chunk"
+            },
+            {
+              "batch_size": 14,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 632.148,
+                "p50": 621.113,
+                "p95": 651.483,
+                "min": 620.473,
+                "max": 654.857
+              },
+              "items_per_sec": 22.147,
+              "tokens": 1065,
+              "tokens_per_sec": 1684.732,
+              "rss_peak_mb": 695.773,
+              "batch_semantics": "true text batch; one embed call per chunk"
+            }
+          ]
+        },
+        "text_chunk_256": {
+          "kind": "text",
+          "items": 14,
+          "rows": [
+            {
+              "batch_size": 1,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 856.66,
+                "p50": 856.318,
+                "p95": 862.422,
+                "min": 850.561,
+                "max": 863.1
+              },
+              "items_per_sec": 16.343,
+              "tokens": 1065,
+              "tokens_per_sec": 1243.201,
+              "rss_peak_mb": 695.902,
+              "batch_semantics": "true text batch; one embed call per chunk"
+            },
+            {
+              "batch_size": 4,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 525.694,
+                "p50": 525.633,
+                "p95": 526.289,
+                "min": 525.087,
+                "max": 526.362
+              },
+              "items_per_sec": 26.631,
+              "tokens": 1065,
+              "tokens_per_sec": 2025.893,
+              "rss_peak_mb": 696.223,
+              "batch_semantics": "true text batch; one embed call per chunk"
+            },
+            {
+              "batch_size": 8,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 533.824,
+                "p50": 533.006,
+                "p95": 535.903,
+                "min": 532.242,
+                "max": 536.225
+              },
+              "items_per_sec": 26.226,
+              "tokens": 1065,
+              "tokens_per_sec": 1995.039,
+              "rss_peak_mb": 696.355,
+              "batch_semantics": "true text batch; one embed call per chunk"
+            },
+            {
+              "batch_size": 14,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 619.996,
+                "p50": 619.648,
+                "p95": 620.796,
+                "min": 619.416,
+                "max": 620.924
+              },
+              "items_per_sec": 22.581,
+              "tokens": 1065,
+              "tokens_per_sec": 1717.754,
+              "rss_peak_mb": 696.449,
+              "batch_semantics": "true text batch; one embed call per chunk"
+            }
+          ]
+        },
+        "page_image_150": {
+          "kind": "page_image_150",
+          "items": 14,
+          "rows": [
+            {
+              "batch_size": 1,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 50655.664,
+                "p50": 50733.906,
+                "p95": 50771.112,
+                "min": 50457.841,
+                "max": 50775.246
+              },
+              "items_per_sec": 0.276,
+              "tokens": 0,
+              "tokens_per_sec": null,
+              "rss_peak_mb": 925.109,
+              "batch_semantics": "paired per-item image/fused calls grouped by batch_size; Qwen3 API has no text_i/image_i pair batch input"
+            },
+            {
+              "batch_size": 4,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 50437.542,
+                "p50": 50438.258,
+                "p95": 50473.945,
+                "min": 50396.458,
+                "max": 50477.91
+              },
+              "items_per_sec": 0.278,
+              "tokens": 0,
+              "tokens_per_sec": null,
+              "rss_peak_mb": 925.121,
+              "batch_semantics": "paired per-item image/fused calls grouped by batch_size; Qwen3 API has no text_i/image_i pair batch input"
+            },
+            {
+              "batch_size": 8,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 50678.584,
+                "p50": 50700.838,
+                "p95": 50761.769,
+                "min": 50566.375,
+                "max": 50768.539
+              },
+              "items_per_sec": 0.276,
+              "tokens": 0,
+              "tokens_per_sec": null,
+              "rss_peak_mb": 925.137,
+              "batch_semantics": "paired per-item image/fused calls grouped by batch_size; Qwen3 API has no text_i/image_i pair batch input"
+            },
+            {
+              "batch_size": 14,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 50745.943,
+                "p50": 50736.189,
+                "p95": 50765.421,
+                "min": 50732.973,
+                "max": 50768.669
+              },
+              "items_per_sec": 0.276,
+              "tokens": 0,
+              "tokens_per_sec": null,
+              "rss_peak_mb": 925.137,
+              "batch_semantics": "paired per-item image/fused calls grouped by batch_size; Qwen3 API has no text_i/image_i pair batch input"
+            }
+          ]
+        },
+        "page_fused_150": {
+          "kind": "page_fused_150",
+          "items": 14,
+          "rows": [
+            {
+              "batch_size": 1,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 51366.316,
+                "p50": 51365.272,
+                "p95": 51393.378,
+                "min": 51337.176,
+                "max": 51396.5
+              },
+              "items_per_sec": 0.273,
+              "tokens": 1065,
+              "tokens_per_sec": null,
+              "rss_peak_mb": 935.383,
+              "batch_semantics": "paired per-item image/fused calls grouped by batch_size; Qwen3 API has no text_i/image_i pair batch input"
+            },
+            {
+              "batch_size": 4,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 51233.547,
+                "p50": 51214.824,
+                "p95": 51281.323,
+                "min": 51197.106,
+                "max": 51288.711
+              },
+              "items_per_sec": 0.273,
+              "tokens": 1065,
+              "tokens_per_sec": null,
+              "rss_peak_mb": 935.383,
+              "batch_semantics": "paired per-item image/fused calls grouped by batch_size; Qwen3 API has no text_i/image_i pair batch input"
+            },
+            {
+              "batch_size": 8,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 51178.701,
+                "p50": 51174.139,
+                "p95": 51189.145,
+                "min": 51171.153,
+                "max": 51190.813
+              },
+              "items_per_sec": 0.274,
+              "tokens": 1065,
+              "tokens_per_sec": null,
+              "rss_peak_mb": 935.383,
+              "batch_semantics": "paired per-item image/fused calls grouped by batch_size; Qwen3 API has no text_i/image_i pair batch input"
+            },
+            {
+              "batch_size": 14,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 51187.66,
+                "p50": 51178.568,
+                "p95": 51211.293,
+                "min": 51169.483,
+                "max": 51214.929
+              },
+              "items_per_sec": 0.274,
+              "tokens": 1065,
+              "tokens_per_sec": null,
+              "rss_peak_mb": 935.383,
+              "batch_semantics": "paired per-item image/fused calls grouped by batch_size; Qwen3 API has no text_i/image_i pair batch input"
+            }
+          ]
+        }
+      },
+      "quality": {
+        "queries": [
+          {
+            "id": "halo",
+            "text": "What causes the halo effect on the edge bump?",
+            "pages": [
+              2
+            ]
+          },
+          {
+            "id": "pr_error",
+            "text": "What should be checked when Downlook PR fails?",
+            "pages": [
+              2,
+              3,
+              4,
+              5
+            ]
+          },
+          {
+            "id": "flux",
+            "text": "How should flux coverage be checked?",
+            "pages": [
+              3
+            ]
+          },
+          {
+            "id": "substrate",
+            "text": "What substrate should be used for PR learning?",
+            "pages": [
+              3
+            ]
+          },
+          {
+            "id": "threshold",
+            "text": "How should the PR threshold and area be adjusted?",
+            "pages": [
+              4
+            ]
+          },
+          {
+            "id": "lighting",
+            "text": "How should the PR lighting be adjusted?",
+            "pages": [
+              4
+            ]
+          },
+          {
+            "id": "inspection_log",
+            "text": "How do I turn on the Vision inspection log?",
+            "pages": [
+              5,
+              6
+            ]
+          },
+          {
+            "id": "dump_files",
+            "text": "How do I save Vision Dump files and system files?",
+            "pages": [
+              11,
+              12,
+              13
+            ]
+          }
+        ],
+        "query_prompt": "Represent the user's input.",
+        "document_prompt": "Represent the user's input.",
+        "page_text": {
+          "recall_at_1": 0.125,
+          "recall_at_3": 0.625,
+          "recall_at_5": 0.625,
+          "mrr": 0.385417,
+          "per_query": [
+            {
+              "id": "halo",
+              "top_pages": [
+                3,
+                5,
+                4,
+                6,
+                1
+              ],
+              "top_scores": [
+                0.687833,
+                0.543837,
+                0.467363,
+                0.430279,
+                0.411495
+              ],
+              "first_relevant_rank": 8
+            },
+            {
+              "id": "pr_error",
+              "top_pages": [
+                1,
+                6,
+                3,
+                4,
+                9
+              ],
+              "top_scores": [
+                0.80956,
+                0.784661,
+                0.747608,
+                0.698669,
+                0.654567
+              ],
+              "first_relevant_rank": 3
+            },
+            {
+              "id": "flux",
+              "top_pages": [
+                4,
+                5,
+                3,
+                6,
+                14
+              ],
+              "top_scores": [
+                0.736796,
+                0.614121,
+                0.500214,
+                0.490588,
+                0.481411
+              ],
+              "first_relevant_rank": 3
+            },
+            {
+              "id": "substrate",
+              "top_pages": [
+                4,
+                1,
+                6,
+                7,
+                14
+              ],
+              "top_scores": [
+                0.619447,
+                0.598974,
+                0.561349,
+                0.530805,
+                0.523237
+              ],
+              "first_relevant_rank": 6
+            },
+            {
+              "id": "threshold",
+              "top_pages": [
+                5,
+                4,
+                3,
+                1,
+                6
+              ],
+              "top_scores": [
+                0.710745,
+                0.627838,
+                0.568288,
+                0.561187,
+                0.531541
+              ],
+              "first_relevant_rank": 2
+            },
+            {
+              "id": "lighting",
+              "top_pages": [
+                5,
+                4,
+                1,
+                6,
+                7
+              ],
+              "top_scores": [
+                0.647218,
+                0.55561,
+                0.535744,
+                0.526635,
+                0.522013
+              ],
+              "first_relevant_rank": 2
+            },
+            {
+              "id": "inspection_log",
+              "top_pages": [
+                11,
+                7,
+                12,
+                13,
+                8
+              ],
+              "top_scores": [
+                0.78343,
+                0.778865,
+                0.770428,
+                0.770428,
+                0.764095
+              ],
+              "first_relevant_rank": 8
+            },
+            {
+              "id": "dump_files",
+              "top_pages": [
+                11,
+                12,
+                13,
+                10,
+                7
+              ],
+              "top_scores": [
+                0.734192,
+                0.682291,
+                0.682291,
+                0.651613,
+                0.592157
+              ],
+              "first_relevant_rank": 1
+            }
+          ]
+        },
+        "text_chunk_256": {
+          "recall_at_1": 0.125,
+          "recall_at_3": 0.625,
+          "recall_at_5": 0.625,
+          "mrr": 0.385417,
+          "per_query": [
+            {
+              "id": "halo",
+              "top_pages": [
+                3,
+                5,
+                4,
+                6,
+                1
+              ],
+              "top_scores": [
+                0.687833,
+                0.543837,
+                0.467363,
+                0.430279,
+                0.411495
+              ],
+              "first_relevant_rank": 8
+            },
+            {
+              "id": "pr_error",
+              "top_pages": [
+                1,
+                6,
+                3,
+                4,
+                9
+              ],
+              "top_scores": [
+                0.80956,
+                0.784661,
+                0.747608,
+                0.698669,
+                0.654567
+              ],
+              "first_relevant_rank": 3
+            },
+            {
+              "id": "flux",
+              "top_pages": [
+                4,
+                5,
+                3,
+                6,
+                14
+              ],
+              "top_scores": [
+                0.736796,
+                0.614121,
+                0.500214,
+                0.490588,
+                0.481411
+              ],
+              "first_relevant_rank": 3
+            },
+            {
+              "id": "substrate",
+              "top_pages": [
+                4,
+                1,
+                6,
+                7,
+                14
+              ],
+              "top_scores": [
+                0.619447,
+                0.598974,
+                0.561349,
+                0.530805,
+                0.523237
+              ],
+              "first_relevant_rank": 6
+            },
+            {
+              "id": "threshold",
+              "top_pages": [
+                5,
+                4,
+                3,
+                1,
+                6
+              ],
+              "top_scores": [
+                0.710745,
+                0.627838,
+                0.568288,
+                0.561187,
+                0.531541
+              ],
+              "first_relevant_rank": 2
+            },
+            {
+              "id": "lighting",
+              "top_pages": [
+                5,
+                4,
+                1,
+                6,
+                7
+              ],
+              "top_scores": [
+                0.647218,
+                0.55561,
+                0.535744,
+                0.526635,
+                0.522013
+              ],
+              "first_relevant_rank": 2
+            },
+            {
+              "id": "inspection_log",
+              "top_pages": [
+                11,
+                7,
+                12,
+                13,
+                8
+              ],
+              "top_scores": [
+                0.78343,
+                0.778865,
+                0.770428,
+                0.770428,
+                0.764095
+              ],
+              "first_relevant_rank": 8
+            },
+            {
+              "id": "dump_files",
+              "top_pages": [
+                11,
+                12,
+                13,
+                10,
+                7
+              ],
+              "top_scores": [
+                0.734192,
+                0.682291,
+                0.682291,
+                0.651613,
+                0.592157
+              ],
+              "first_relevant_rank": 1
+            }
+          ]
+        },
+        "page_image_150": {
+          "recall_at_1": 0.25,
+          "recall_at_3": 0.75,
+          "recall_at_5": 0.875,
+          "mrr": 0.50744,
+          "per_query": [
+            {
+              "id": "halo",
+              "top_pages": [
+                3,
+                5,
+                4,
+                6,
+                1
+              ],
+              "top_scores": [
+                0.594068,
+                0.468316,
+                0.367909,
+                0.328082,
+                0.323211
+              ],
+              "first_relevant_rank": 7
+            },
+            {
+              "id": "pr_error",
+              "top_pages": [
+                3,
+                6,
+                1,
+                4,
+                7
+              ],
+              "top_scores": [
+                0.673967,
+                0.663834,
+                0.607225,
+                0.588629,
+                0.477701
+              ],
+              "first_relevant_rank": 1
+            },
+            {
+              "id": "flux",
+              "top_pages": [
+                4,
+                5,
+                3,
+                6,
+                1
+              ],
+              "top_scores": [
+                0.664358,
+                0.509447,
+                0.413022,
+                0.388576,
+                0.384847
+              ],
+              "first_relevant_rank": 3
+            },
+            {
+              "id": "substrate",
+              "top_pages": [
+                4,
+                6,
+                1,
+                3,
+                7
+              ],
+              "top_scores": [
+                0.555287,
+                0.477832,
+                0.437785,
+                0.420174,
+                0.414003
+              ],
+              "first_relevant_rank": 4
+            },
+            {
+              "id": "threshold",
+              "top_pages": [
+                5,
+                4,
+                3,
+                6,
+                7
+              ],
+              "top_scores": [
+                0.658172,
+                0.589993,
+                0.460916,
+                0.441138,
+                0.435909
+              ],
+              "first_relevant_rank": 2
+            },
+            {
+              "id": "lighting",
+              "top_pages": [
+                5,
+                4,
+                7,
+                6,
+                3
+              ],
+              "top_scores": [
+                0.60363,
+                0.553695,
+                0.489252,
+                0.462398,
+                0.4478
+              ],
+              "first_relevant_rank": 2
+            },
+            {
+              "id": "inspection_log",
+              "top_pages": [
+                11,
+                7,
+                6,
+                12,
+                13
+              ],
+              "top_scores": [
+                0.675607,
+                0.647973,
+                0.635376,
+                0.632272,
+                0.632272
+              ],
+              "first_relevant_rank": 3
+            },
+            {
+              "id": "dump_files",
+              "top_pages": [
+                11,
+                12,
+                13,
+                10,
+                7
+              ],
+              "top_scores": [
+                0.720342,
+                0.670411,
+                0.670411,
+                0.630989,
+                0.495859
+              ],
+              "first_relevant_rank": 1
+            }
+          ]
+        },
+        "page_fused_150": {
+          "recall_at_1": 0.125,
+          "recall_at_3": 0.625,
+          "recall_at_5": 0.625,
+          "mrr": 0.405506,
+          "per_query": [
+            {
+              "id": "halo",
+              "top_pages": [
+                3,
+                5,
+                4,
+                6,
+                1
+              ],
+              "top_scores": [
+                0.674135,
+                0.525859,
+                0.420209,
+                0.387076,
+                0.379705
+              ],
+              "first_relevant_rank": 7
+            },
+            {
+              "id": "pr_error",
+              "top_pages": [
+                6,
+                3,
+                1,
+                4,
+                5
+              ],
+              "top_scores": [
+                0.746514,
+                0.726955,
+                0.713655,
+                0.64899,
+                0.572093
+              ],
+              "first_relevant_rank": 2
+            },
+            {
+              "id": "flux",
+              "top_pages": [
+                4,
+                5,
+                3,
+                14,
+                6
+              ],
+              "top_scores": [
+                0.687298,
+                0.587525,
+                0.470959,
+                0.470796,
+                0.446307
+              ],
+              "first_relevant_rank": 3
+            },
+            {
+              "id": "substrate",
+              "top_pages": [
+                4,
+                6,
+                1,
+                14,
+                7
+              ],
+              "top_scores": [
+                0.57606,
+                0.516127,
+                0.505997,
+                0.500486,
+                0.49558
+              ],
+              "first_relevant_rank": 7
+            },
+            {
+              "id": "threshold",
+              "top_pages": [
+                5,
+                4,
+                3,
+                6,
+                1
+              ],
+              "top_scores": [
+                0.703252,
+                0.604597,
+                0.53951,
+                0.497079,
+                0.490584
+              ],
+              "first_relevant_rank": 2
+            },
+            {
+              "id": "lighting",
+              "top_pages": [
+                5,
+                4,
+                1,
+                7,
+                6
+              ],
+              "top_scores": [
+                0.671449,
+                0.538766,
+                0.509663,
+                0.509422,
+                0.499973
+              ],
+              "first_relevant_rank": 2
+            },
+            {
+              "id": "inspection_log",
+              "top_pages": [
+                7,
+                11,
+                12,
+                13,
+                8
+              ],
+              "top_scores": [
+                0.794577,
+                0.764063,
+                0.745707,
+                0.745707,
+                0.743503
+              ],
+              "first_relevant_rank": 8
+            },
+            {
+              "id": "dump_files",
+              "top_pages": [
+                11,
+                12,
+                13,
+                10,
+                7
+              ],
+              "top_scores": [
+                0.72485,
+                0.685785,
+                0.685785,
+                0.663044,
+                0.595835
+              ],
+              "first_relevant_rank": 1
+            }
+          ]
+        },
+        "cross_representation_cosine": {
+          "page_text_vs_page_image_150": {
+            "mean": 0.827938,
+            "min": 0.649699,
+            "max": 0.910977
+          },
+          "page_text_vs_page_fused_150": {
+            "mean": 0.940288,
+            "min": 0.796422,
+            "max": 0.969077
+          },
+          "page_image_150_vs_page_fused_150": {
+            "mean": 0.919313,
+            "min": 0.840619,
+            "max": 0.952714
+          }
+        }
+      }
+    },
+    "INT4": {
+      "model_dir": "/home/chaofan/model_benchmark/benchmark/models/Qwen3-VL-Embedding-2B-INT4",
+      "precision": "INT4",
+      "device": "GPU",
+      "model_load_ms": 5509.907,
+      "embedding_dim": 2048,
+      "performance": {
+        "page_text": {
+          "kind": "text",
+          "items": 14,
+          "rows": [
+            {
+              "batch_size": 1,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 776.969,
+                "p50": 756.035,
+                "p95": 828.088,
+                "min": 738.779,
+                "max": 836.094
+              },
+              "items_per_sec": 18.019,
+              "tokens": 1065,
+              "tokens_per_sec": 1370.71,
+              "rss_peak_mb": 844.934,
+              "batch_semantics": "true text batch; one embed call per chunk"
+            },
+            {
+              "batch_size": 4,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 514.427,
+                "p50": 500.537,
+                "p95": 538.337,
+                "min": 500.208,
+                "max": 542.537
+              },
+              "items_per_sec": 27.215,
+              "tokens": 1065,
+              "tokens_per_sec": 2070.263,
+              "rss_peak_mb": 676.301,
+              "batch_semantics": "true text batch; one embed call per chunk"
+            },
+            {
+              "batch_size": 8,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 528.499,
+                "p50": 515.903,
+                "p95": 550.218,
+                "min": 515.562,
+                "max": 554.031
+              },
+              "items_per_sec": 26.49,
+              "tokens": 1065,
+              "tokens_per_sec": 2015.143,
+              "rss_peak_mb": 692.105,
+              "batch_semantics": "true text batch; one embed call per chunk"
+            },
+            {
+              "batch_size": 14,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 627.452,
+                "p50": 614.25,
+                "p95": 651.316,
+                "min": 612.671,
+                "max": 655.435
+              },
+              "items_per_sec": 22.312,
+              "tokens": 1065,
+              "tokens_per_sec": 1697.341,
+              "rss_peak_mb": 752.039,
+              "batch_semantics": "true text batch; one embed call per chunk"
+            }
+          ]
+        },
+        "text_chunk_256": {
+          "kind": "text",
+          "items": 14,
+          "rows": [
+            {
+              "batch_size": 1,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 739.501,
+                "p50": 739.953,
+                "p95": 740.285,
+                "min": 738.23,
+                "max": 740.322
+              },
+              "items_per_sec": 18.932,
+              "tokens": 1065,
+              "tokens_per_sec": 1440.159,
+              "rss_peak_mb": 752.406,
+              "batch_semantics": "true text batch; one embed call per chunk"
+            },
+            {
+              "batch_size": 4,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 499.918,
+                "p50": 500.024,
+                "p95": 500.546,
+                "min": 499.126,
+                "max": 500.603
+              },
+              "items_per_sec": 28.005,
+              "tokens": 1065,
+              "tokens_per_sec": 2130.35,
+              "rss_peak_mb": 770.434,
+              "batch_semantics": "true text batch; one embed call per chunk"
+            },
+            {
+              "batch_size": 8,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 516.147,
+                "p50": 516.307,
+                "p95": 516.395,
+                "min": 515.731,
+                "max": 516.405
+              },
+              "items_per_sec": 27.124,
+              "tokens": 1065,
+              "tokens_per_sec": 2063.364,
+              "rss_peak_mb": 779.238,
+              "batch_semantics": "true text batch; one embed call per chunk"
+            },
+            {
+              "batch_size": 14,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 612.603,
+                "p50": 612.453,
+                "p95": 613.044,
+                "min": 612.247,
+                "max": 613.11
+              },
+              "items_per_sec": 22.853,
+              "tokens": 1065,
+              "tokens_per_sec": 1738.483,
+              "rss_peak_mb": 781.32,
+              "batch_semantics": "true text batch; one embed call per chunk"
+            }
+          ]
+        },
+        "page_image_150": {
+          "kind": "page_image_150",
+          "items": 14,
+          "rows": [
+            {
+              "batch_size": 1,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 50624.143,
+                "p50": 50596.916,
+                "p95": 50718.364,
+                "min": 50543.655,
+                "max": 50731.859
+              },
+              "items_per_sec": 0.277,
+              "tokens": 0,
+              "tokens_per_sec": null,
+              "rss_peak_mb": 965.57,
+              "batch_semantics": "paired per-item image/fused calls grouped by batch_size; Qwen3 API has no text_i/image_i pair batch input"
+            },
+            {
+              "batch_size": 4,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 50463.636,
+                "p50": 50444.071,
+                "p95": 50515.469,
+                "min": 50423.436,
+                "max": 50523.402
+              },
+              "items_per_sec": 0.277,
+              "tokens": 0,
+              "tokens_per_sec": null,
+              "rss_peak_mb": 938.867,
+              "batch_semantics": "paired per-item image/fused calls grouped by batch_size; Qwen3 API has no text_i/image_i pair batch input"
+            },
+            {
+              "batch_size": 8,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 50500.442,
+                "p50": 50502.561,
+                "p95": 50539.317,
+                "min": 50455.364,
+                "max": 50543.401
+              },
+              "items_per_sec": 0.277,
+              "tokens": 0,
+              "tokens_per_sec": null,
+              "rss_peak_mb": 967.828,
+              "batch_semantics": "paired per-item image/fused calls grouped by batch_size; Qwen3 API has no text_i/image_i pair batch input"
+            },
+            {
+              "batch_size": 14,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 50459.49,
+                "p50": 50467.479,
+                "p95": 50481.379,
+                "min": 50428.066,
+                "max": 50482.924
+              },
+              "items_per_sec": 0.277,
+              "tokens": 0,
+              "tokens_per_sec": null,
+              "rss_peak_mb": 968.363,
+              "batch_semantics": "paired per-item image/fused calls grouped by batch_size; Qwen3 API has no text_i/image_i pair batch input"
+            }
+          ]
+        },
+        "page_fused_150": {
+          "kind": "page_fused_150",
+          "items": 14,
+          "rows": [
+            {
+              "batch_size": 1,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 51092.059,
+                "p50": 51113.177,
+                "p95": 51126.569,
+                "min": 51034.943,
+                "max": 51128.057
+              },
+              "items_per_sec": 0.274,
+              "tokens": 1065,
+              "tokens_per_sec": null,
+              "rss_peak_mb": 980.25,
+              "batch_semantics": "paired per-item image/fused calls grouped by batch_size; Qwen3 API has no text_i/image_i pair batch input"
+            },
+            {
+              "batch_size": 4,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 51105.709,
+                "p50": 51094.054,
+                "p95": 51137.017,
+                "min": 51081.281,
+                "max": 51141.79
+              },
+              "items_per_sec": 0.274,
+              "tokens": 1065,
+              "tokens_per_sec": null,
+              "rss_peak_mb": 961.453,
+              "batch_semantics": "paired per-item image/fused calls grouped by batch_size; Qwen3 API has no text_i/image_i pair batch input"
+            },
+            {
+              "batch_size": 8,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 51132.753,
+                "p50": 51124.051,
+                "p95": 51174.604,
+                "min": 51093.988,
+                "max": 51180.221
+              },
+              "items_per_sec": 0.274,
+              "tokens": 1065,
+              "tokens_per_sec": null,
+              "rss_peak_mb": 981.316,
+              "batch_semantics": "paired per-item image/fused calls grouped by batch_size; Qwen3 API has no text_i/image_i pair batch input"
+            },
+            {
+              "batch_size": 14,
+              "items": 14,
+              "embedding_dim": 2048,
+              "output_shape": [
+                14,
+                2048
+              ],
+              "time_ms": {
+                "mean": 51131.699,
+                "p50": 51144.666,
+                "p95": 51173.0,
+                "min": 51074.282,
+                "max": 51176.148
+              },
+              "items_per_sec": 0.274,
+              "tokens": 1065,
+              "tokens_per_sec": null,
+              "rss_peak_mb": 971.707,
+              "batch_semantics": "paired per-item image/fused calls grouped by batch_size; Qwen3 API has no text_i/image_i pair batch input"
+            }
+          ]
+        }
+      },
+      "quality": {
+        "queries": [
+          {
+            "id": "halo",
+            "text": "What causes the halo effect on the edge bump?",
+            "pages": [
+              2
+            ]
+          },
+          {
+            "id": "pr_error",
+            "text": "What should be checked when Downlook PR fails?",
+            "pages": [
+              2,
+              3,
+              4,
+              5
+            ]
+          },
+          {
+            "id": "flux",
+            "text": "How should flux coverage be checked?",
+            "pages": [
+              3
+            ]
+          },
+          {
+            "id": "substrate",
+            "text": "What substrate should be used for PR learning?",
+            "pages": [
+              3
+            ]
+          },
+          {
+            "id": "threshold",
+            "text": "How should the PR threshold and area be adjusted?",
+            "pages": [
+              4
+            ]
+          },
+          {
+            "id": "lighting",
+            "text": "How should the PR lighting be adjusted?",
+            "pages": [
+              4
+            ]
+          },
+          {
+            "id": "inspection_log",
+            "text": "How do I turn on the Vision inspection log?",
+            "pages": [
+              5,
+              6
+            ]
+          },
+          {
+            "id": "dump_files",
+            "text": "How do I save Vision Dump files and system files?",
+            "pages": [
+              11,
+              12,
+              13
+            ]
+          }
+        ],
+        "query_prompt": "Represent the user's input.",
+        "document_prompt": "Represent the user's input.",
+        "page_text": {
+          "recall_at_1": 0.125,
+          "recall_at_3": 0.5,
+          "recall_at_5": 0.75,
+          "mrr": 0.380357,
+          "per_query": [
+            {
+              "id": "halo",
+              "top_pages": [
+                3,
+                5,
+                4,
+                6,
+                1
+              ],
+              "top_scores": [
+                0.642216,
+                0.54729,
+                0.496827,
+                0.464283,
+                0.455328
+              ],
+              "first_relevant_rank": 6
+            },
+            {
+              "id": "pr_error",
+              "top_pages": [
+                6,
+                1,
+                3,
+                4,
+                9
+              ],
+              "top_scores": [
+                0.716156,
+                0.71212,
+                0.711369,
+                0.672758,
+                0.608875
+              ],
+              "first_relevant_rank": 3
+            },
+            {
+              "id": "flux",
+              "top_pages": [
+                4,
+                5,
+                11,
+                2,
+                3
+              ],
+              "top_scores": [
+                0.723085,
+                0.61666,
+                0.508669,
+                0.503966,
+                0.501227
+              ],
+              "first_relevant_rank": 5
+            },
+            {
+              "id": "substrate",
+              "top_pages": [
+                4,
+                1,
+                6,
+                2,
+                3
+              ],
+              "top_scores": [
+                0.668563,
+                0.563294,
+                0.552748,
+                0.544097,
+                0.542048
+              ],
+              "first_relevant_rank": 5
+            },
+            {
+              "id": "threshold",
+              "top_pages": [
+                5,
+                4,
+                3,
+                1,
+                6
+              ],
+              "top_scores": [
+                0.716595,
+                0.692191,
+                0.62688,
+                0.585223,
+                0.572291
+              ],
+              "first_relevant_rank": 2
+            },
+            {
+              "id": "lighting",
+              "top_pages": [
+                5,
+                4,
+                6,
+                3,
+                1
+              ],
+              "top_scores": [
+                0.680178,
+                0.603881,
+                0.565667,
+                0.547839,
+                0.542457
+              ],
+              "first_relevant_rank": 2
+            },
+            {
+              "id": "inspection_log",
+              "top_pages": [
+                11,
+                12,
+                13,
+                10,
+                8
+              ],
+              "top_scores": [
+                0.804499,
+                0.778678,
+                0.778678,
+                0.774237,
+                0.772868
+              ],
+              "first_relevant_rank": 7
+            },
+            {
+              "id": "dump_files",
+              "top_pages": [
+                11,
+                10,
+                13,
+                12,
+                7
+              ],
+              "top_scores": [
+                0.737374,
+                0.673019,
+                0.657927,
+                0.657927,
+                0.622176
+              ],
+              "first_relevant_rank": 1
+            }
+          ]
+        },
+        "text_chunk_256": {
+          "recall_at_1": 0.125,
+          "recall_at_3": 0.5,
+          "recall_at_5": 0.75,
+          "mrr": 0.380357,
+          "per_query": [
+            {
+              "id": "halo",
+              "top_pages": [
+                3,
+                5,
+                4,
+                6,
+                1
+              ],
+              "top_scores": [
+                0.642216,
+                0.54729,
+                0.496827,
+                0.464283,
+                0.455328
+              ],
+              "first_relevant_rank": 6
+            },
+            {
+              "id": "pr_error",
+              "top_pages": [
+                6,
+                1,
+                3,
+                4,
+                9
+              ],
+              "top_scores": [
+                0.716156,
+                0.71212,
+                0.711369,
+                0.672758,
+                0.608875
+              ],
+              "first_relevant_rank": 3
+            },
+            {
+              "id": "flux",
+              "top_pages": [
+                4,
+                5,
+                11,
+                2,
+                3
+              ],
+              "top_scores": [
+                0.723085,
+                0.61666,
+                0.508669,
+                0.503966,
+                0.501227
+              ],
+              "first_relevant_rank": 5
+            },
+            {
+              "id": "substrate",
+              "top_pages": [
+                4,
+                1,
+                6,
+                2,
+                3
+              ],
+              "top_scores": [
+                0.668563,
+                0.563294,
+                0.552748,
+                0.544097,
+                0.542048
+              ],
+              "first_relevant_rank": 5
+            },
+            {
+              "id": "threshold",
+              "top_pages": [
+                5,
+                4,
+                3,
+                1,
+                6
+              ],
+              "top_scores": [
+                0.716595,
+                0.692191,
+                0.62688,
+                0.585223,
+                0.572291
+              ],
+              "first_relevant_rank": 2
+            },
+            {
+              "id": "lighting",
+              "top_pages": [
+                5,
+                4,
+                6,
+                3,
+                1
+              ],
+              "top_scores": [
+                0.680178,
+                0.603881,
+                0.565667,
+                0.547839,
+                0.542457
+              ],
+              "first_relevant_rank": 2
+            },
+            {
+              "id": "inspection_log",
+              "top_pages": [
+                11,
+                12,
+                13,
+                10,
+                8
+              ],
+              "top_scores": [
+                0.804499,
+                0.778678,
+                0.778678,
+                0.774237,
+                0.772868
+              ],
+              "first_relevant_rank": 7
+            },
+            {
+              "id": "dump_files",
+              "top_pages": [
+                11,
+                10,
+                13,
+                12,
+                7
+              ],
+              "top_scores": [
+                0.737374,
+                0.673019,
+                0.657927,
+                0.657927,
+                0.622176
+              ],
+              "first_relevant_rank": 1
+            }
+          ]
+        },
+        "page_image_150": {
+          "recall_at_1": 0.25,
+          "recall_at_3": 0.75,
+          "recall_at_5": 0.75,
+          "mrr": 0.497024,
+          "per_query": [
+            {
+              "id": "halo",
+              "top_pages": [
+                3,
+                5,
+                4,
+                1,
+                6
+              ],
+              "top_scores": [
+                0.599849,
+                0.502871,
+                0.399792,
+                0.393761,
+                0.367912
+              ],
+              "first_relevant_rank": 7
+            },
+            {
+              "id": "pr_error",
+              "top_pages": [
+                3,
+                6,
+                4,
+                1,
+                9
+              ],
+              "top_scores": [
+                0.653002,
+                0.628808,
+                0.586381,
+                0.548207,
+                0.476678
+              ],
+              "first_relevant_rank": 1
+            },
+            {
+              "id": "flux",
+              "top_pages": [
+                4,
+                5,
+                3,
+                11,
+                8
+              ],
+              "top_scores": [
+                0.673151,
+                0.556855,
+                0.472505,
+                0.464333,
+                0.44619
+              ],
+              "first_relevant_rank": 3
+            },
+            {
+              "id": "substrate",
+              "top_pages": [
+                4,
+                6,
+                3,
+                5,
+                1
+              ],
+              "top_scores": [
+                0.582628,
+                0.486605,
+                0.483131,
+                0.45708,
+                0.452283
+              ],
+              "first_relevant_rank": 3
+            },
+            {
+              "id": "threshold",
+              "top_pages": [
+                5,
+                4,
+                3,
+                6,
+                7
+              ],
+              "top_scores": [
+                0.676082,
+                0.596306,
+                0.541409,
+                0.491291,
+                0.466898
+              ],
+              "first_relevant_rank": 2
+            },
+            {
+              "id": "lighting",
+              "top_pages": [
+                5,
+                4,
+                7,
+                3,
+                6
+              ],
+              "top_scores": [
+                0.602656,
+                0.561548,
+                0.507949,
+                0.502522,
+                0.499162
+              ],
+              "first_relevant_rank": 2
+            },
+            {
+              "id": "inspection_log",
+              "top_pages": [
+                11,
+                12,
+                13,
+                7,
+                8
+              ],
+              "top_scores": [
+                0.729174,
+                0.682779,
+                0.682779,
+                0.680732,
+                0.680558
+              ],
+              "first_relevant_rank": 6
+            },
+            {
+              "id": "dump_files",
+              "top_pages": [
+                11,
+                12,
+                13,
+                10,
+                7
+              ],
+              "top_scores": [
+                0.732005,
+                0.702114,
+                0.702114,
+                0.64998,
+                0.544185
+              ],
+              "first_relevant_rank": 1
+            }
+          ]
+        },
+        "page_fused_150": {
+          "recall_at_1": 0.25,
+          "recall_at_3": 0.5,
+          "recall_at_5": 0.75,
+          "mrr": 0.461458,
+          "per_query": [
+            {
+              "id": "halo",
+              "top_pages": [
+                3,
+                5,
+                4,
+                1,
+                2
+              ],
+              "top_scores": [
+                0.611727,
+                0.532744,
+                0.459538,
+                0.423327,
+                0.415826
+              ],
+              "first_relevant_rank": 5
+            },
+            {
+              "id": "pr_error",
+              "top_pages": [
+                3,
+                6,
+                1,
+                4,
+                5
+              ],
+              "top_scores": [
+                0.681384,
+                0.673536,
+                0.637656,
+                0.632706,
+                0.579934
+              ],
+              "first_relevant_rank": 1
+            },
+            {
+              "id": "flux",
+              "top_pages": [
+                4,
+                5,
+                8,
+                2,
+                11
+              ],
+              "top_scores": [
+                0.692612,
+                0.586196,
+                0.465014,
+                0.462462,
+                0.460347
+              ],
+              "first_relevant_rank": 6
+            },
+            {
+              "id": "substrate",
+              "top_pages": [
+                4,
+                5,
+                6,
+                1,
+                3
+              ],
+              "top_scores": [
+                0.607204,
+                0.524787,
+                0.517852,
+                0.491325,
+                0.489266
+              ],
+              "first_relevant_rank": 5
+            },
+            {
+              "id": "threshold",
+              "top_pages": [
+                5,
+                4,
+                3,
+                2,
+                1
+              ],
+              "top_scores": [
+                0.703229,
+                0.635089,
+                0.573593,
+                0.534183,
+                0.530725
+              ],
+              "first_relevant_rank": 2
+            },
+            {
+              "id": "lighting",
+              "top_pages": [
+                5,
+                4,
+                6,
+                1,
+                7
+              ],
+              "top_scores": [
+                0.695258,
+                0.569508,
+                0.524899,
+                0.523536,
+                0.505823
+              ],
+              "first_relevant_rank": 2
+            },
+            {
+              "id": "inspection_log",
+              "top_pages": [
+                7,
+                12,
+                13,
+                11,
+                8
+              ],
+              "top_scores": [
+                0.786884,
+                0.767157,
+                0.767157,
+                0.763848,
+                0.761789
+              ],
+              "first_relevant_rank": 8
+            },
+            {
+              "id": "dump_files",
+              "top_pages": [
+                11,
+                12,
+                13,
+                10,
+                7
+              ],
+              "top_scores": [
+                0.729769,
+                0.67544,
+                0.67544,
+                0.651241,
+                0.61721
+              ],
+              "first_relevant_rank": 1
+            }
+          ]
+        },
+        "cross_representation_cosine": {
+          "page_text_vs_page_image_150": {
+            "mean": 0.814221,
+            "min": 0.613542,
+            "max": 0.893815
+          },
+          "page_text_vs_page_fused_150": {
+            "mean": 0.922413,
+            "min": 0.773281,
+            "max": 0.957336
+          },
+          "page_image_150_vs_page_fused_150": {
+            "mean": 0.909631,
+            "min": 0.845826,
+            "max": 0.937221
+          }
+        }
+      }
+    }
+  }
+}

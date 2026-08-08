@@ -75,6 +75,36 @@ python benchmark_qwen3_vl.py --suite all --repeat 20 --warmup 3
 - `manifest.json`：测试参数和维度语义；
 - `assets/`：确定性梯度图 workload。
 
+## 文档 Embedding Benchmark
+
+已加入与 GME `document_embedding_eval_int8_int4_gpu` 对齐的 PDF 文档评测：
+
+[document_embedding_eval_int8_int4_gpu](document_embedding_eval_int8_int4_gpu/)
+
+测试输入是本目录的 [060_OT_Downlook_PR_Error.pdf](060_OT_Downlook_PR_Error.pdf)，覆盖：
+
+- GPU INT8/INT4；
+- PDF 原生文本 page embedding；
+- 256 tokenizer tokens、64 tokens overlap 的 text chunks；
+- 150 DPI page image embedding；
+- page text + 对应 page image 的 fused embedding；
+- batch `1/4/8/14`；
+- items/s、tokens/s、模型加载时间、RSS、Recall@1/3/5、MRR 和跨表示 cosine。
+
+运行：
+
+```bash
+cd document_embedding_eval_int8_int4_gpu
+python run_eval.py
+```
+
+完整原始结果：[results/benchmark.json](document_embedding_eval_int8_int4_gpu/results/benchmark.json)
+
+可读报告：[results/REPORT.md](document_embedding_eval_int8_int4_gpu/results/REPORT.md)
+
+Qwen3 multimodal API 不支持 GME 风格的 `(text_i, image_i)` 成对 batch，因此 image/fused
+保持逐页配对调用，并以 batch size 作为分组档位；具体口径见该目录的 README。
+
 ## 结果与方法
 
 详细测试计划、计时口径、结果解读和生产迁移注意事项见
