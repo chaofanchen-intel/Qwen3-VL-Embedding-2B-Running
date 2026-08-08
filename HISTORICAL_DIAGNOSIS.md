@@ -3,6 +3,10 @@
 日期：2026-08-08
 
 本文保留在 benchmark 重构前的模型选型、官方代码覆盖情况、失败证据和修复过程。
+统一 patch 的真实基线是官方 `2026.3.0.0` release commit
+`bd8d6542e3ca1ac30042d5d8d4202ce00b5f4af0`，不是本机后续自定义的
+`0c38b54d7e74dce6441492437d7b6a30577113c9` PR commit。两者在本 patch 涉及的官方
+源码文件上当时没有差异，但复现仍必须从官方 tag 开始。
 性能新结果不写在本文，统一见 [REPORT.md](REPORT.md) 和
 [benchmark_results/BENCHMARK_RESULTS.md](benchmark_results/BENCHMARK_RESULTS.md)。
 

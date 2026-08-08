@@ -23,13 +23,14 @@ cmake --install /home/chaofan/model_benchmark/benchmark/openvino.genai/build \
 
 统一修复 patch：[0001-fix-qwen3-vl-embedding-2b-2026.3.patch](patches/0001-fix-qwen3-vl-embedding-2b-2026.3.patch)。
 
-该 patch 以 OpenVINO GenAI 2026.3 checkout commit
-`0c38b54d7e74dce6441492437d7b6a30577113c9` 为基线，包含纯文本 shape 修复和
+该 patch 以官方 OpenVINO GenAI 2026.3 release commit
+`bd8d6542e3ca1ac30042d5d8d4202ce00b5f4af0`（tag `2026.3.0.0`，
+`origin/releases/2026/3`）为基线，包含纯文本 shape 修复和
 multimodal batch 修复。复现方式：
 
 ```bash
 cd /path/to/openvino.genai
-git checkout 0c38b54d7e74dce6441492437d7b6a30577113c9
+git checkout bd8d6542e3ca1ac30042d5d8d4202ce00b5f4af0
 git apply /path/to/Qwen3-VL-Embedding-2B-Running/patches/0001-fix-qwen3-vl-embedding-2b-2026.3.patch
 cmake --build build -j2
 ```

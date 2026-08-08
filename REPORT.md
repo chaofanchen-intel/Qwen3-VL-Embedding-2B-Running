@@ -56,8 +56,9 @@ deepstack_visual_embeds = [3, sequence_length, hidden]
 
 统一 patch：[0001-fix-qwen3-vl-embedding-2b-2026.3.patch](patches/0001-fix-qwen3-vl-embedding-2b-2026.3.patch)
 
-该 patch 以 GenAI 2026.3 checkout commit
-`0c38b54d7e74dce6441492437d7b6a30577113c9` 为基线，必须先在 pristine checkout 应用，
+该 patch 以官方 GenAI 2026.3 release commit
+`bd8d6542e3ca1ac30042d5d8d4202ce00b5f4af0`（tag `2026.3.0.0`，
+`origin/releases/2026/3`）为基线，必须先在 pristine checkout 应用，
 再重新编译和安装。
 
 之前的 `[3] -> [4] position_ids` 实验与 IR 的 `[3, ?, ?]` 输入不匹配，不能作为
@@ -281,6 +282,11 @@ python benchmark_qwen3_vl.py --suite baseline \
 其中 `BENCHMARK_RESULTS.md` 包含 baseline 表、每个文本长度的 native 2048 维表、
 以及每个图片尺寸的 image/fused native 2048 维表和 batch N 扩展表。这里不手工复制 JSON 数字，避免
 重新运行后报告与原始结果漂移。
+
+当前 batch 结果使用最终通用 batch 修复、GPU、`repeat=20`、`warmup=3`，覆盖
+INT8/INT4 和 N=1/2/4/8/16/32；每个 N 的 text/image/fused 输出 shape 分别为
+`[N,2048]`。baseline 和 detailed 结果同样保留在对应 JSON 中，当前汇总页是三套结果
+的合并视图。
 
 ### 结果阅读规则
 

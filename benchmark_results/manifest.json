@@ -1,8 +1,8 @@
 {
   "script": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/benchmark_qwen3_vl.py",
-  "suite": "batch",
-  "repeat": 3,
-  "warmup": 1,
+  "suite": "all",
+  "repeat": 20,
+  "warmup": 3,
   "baseline_output_dimension": 2048,
   "detailed_output_dimension": 2048,
   "batch_sizes": [
