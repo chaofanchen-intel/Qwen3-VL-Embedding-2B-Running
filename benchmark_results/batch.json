@@ -1,0 +1,658 @@
+{
+  "suite": "batch",
+  "device": "GPU",
+  "precisions": [
+    "INT8",
+    "INT4"
+  ],
+  "batch_sizes": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32
+  ],
+  "workload": {
+    "text": "What causes the halo effect on the edge bump?",
+    "token_count": 32,
+    "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/benchmark_results/assets/gradient_448x448.png",
+    "image_size_wh": [
+      448,
+      448
+    ],
+    "image_shape": [
+      448,
+      448,
+      3
+    ],
+    "image_dtype": "uint8 RGB",
+    "semantics": "one API call returns N rows; image/fused use one shared image and N text rows"
+  },
+  "results": {
+    "INT8": {
+      "construct_ms": 5767.431,
+      "cells": {
+        "1": {
+          "text": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 1,
+            "mean_ms": 40.028,
+            "mean_ms_per_embedding": 40.028,
+            "stdev_ms": 0.171,
+            "min_ms": 39.733,
+            "max_ms": 40.375,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "image": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 1,
+            "mean_ms": 297.421,
+            "mean_ms_per_embedding": 297.421,
+            "stdev_ms": 2.133,
+            "min_ms": 294.527,
+            "max_ms": 303.172,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "fused": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 1,
+            "mean_ms": 290.734,
+            "mean_ms_per_embedding": 290.734,
+            "stdev_ms": 21.011,
+            "min_ms": 216.237,
+            "max_ms": 302.579,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          }
+        },
+        "2": {
+          "text": {
+            "output_shape": [
+              2,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 2,
+            "mean_ms": 44.629,
+            "mean_ms_per_embedding": 22.315,
+            "stdev_ms": 0.291,
+            "min_ms": 44.229,
+            "max_ms": 45.525,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "image": {
+            "output_shape": [
+              2,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 2,
+            "mean_ms": 559.651,
+            "mean_ms_per_embedding": 279.826,
+            "stdev_ms": 45.386,
+            "min_ms": 433.126,
+            "max_ms": 585.627,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "fused": {
+            "output_shape": [
+              2,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 2,
+            "mean_ms": 569.606,
+            "mean_ms_per_embedding": 284.803,
+            "stdev_ms": 34.583,
+            "min_ms": 437.249,
+            "max_ms": 586.15,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          }
+        },
+        "4": {
+          "text": {
+            "output_shape": [
+              4,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 4,
+            "mean_ms": 51.438,
+            "mean_ms_per_embedding": 12.859,
+            "stdev_ms": 0.322,
+            "min_ms": 51.012,
+            "max_ms": 52.288,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "image": {
+            "output_shape": [
+              4,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 4,
+            "mean_ms": 1126.419,
+            "mean_ms_per_embedding": 281.605,
+            "stdev_ms": 69.6,
+            "min_ms": 851.336,
+            "max_ms": 1160.348,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "fused": {
+            "output_shape": [
+              4,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 4,
+            "mean_ms": 1147.322,
+            "mean_ms_per_embedding": 286.831,
+            "stdev_ms": 31.055,
+            "min_ms": 1020.784,
+            "max_ms": 1170.823,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          }
+        },
+        "8": {
+          "text": {
+            "output_shape": [
+              8,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 8,
+            "mean_ms": 64.453,
+            "mean_ms_per_embedding": 8.057,
+            "stdev_ms": 0.351,
+            "min_ms": 63.952,
+            "max_ms": 65.259,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "image": {
+            "output_shape": [
+              8,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 8,
+            "mean_ms": 2257.172,
+            "mean_ms_per_embedding": 282.147,
+            "stdev_ms": 83.596,
+            "min_ms": 1904.848,
+            "max_ms": 2291.853,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "fused": {
+            "output_shape": [
+              8,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 8,
+            "mean_ms": 2300.436,
+            "mean_ms_per_embedding": 287.554,
+            "stdev_ms": 23.771,
+            "min_ms": 2206.502,
+            "max_ms": 2321.589,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          }
+        },
+        "16": {
+          "text": {
+            "output_shape": [
+              16,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 16,
+            "mean_ms": 90.567,
+            "mean_ms_per_embedding": 5.66,
+            "stdev_ms": 0.457,
+            "min_ms": 89.919,
+            "max_ms": 91.649,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "image": {
+            "output_shape": [
+              16,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 16,
+            "mean_ms": 4536.362,
+            "mean_ms_per_embedding": 283.523,
+            "stdev_ms": 151.953,
+            "min_ms": 3912.778,
+            "max_ms": 4641.106,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "fused": {
+            "output_shape": [
+              16,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 16,
+            "mean_ms": 4618.181,
+            "mean_ms_per_embedding": 288.636,
+            "stdev_ms": 43.559,
+            "min_ms": 4525.67,
+            "max_ms": 4668.631,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          }
+        },
+        "32": {
+          "text": {
+            "output_shape": [
+              32,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 32,
+            "mean_ms": 158.127,
+            "mean_ms_per_embedding": 4.941,
+            "stdev_ms": 0.514,
+            "min_ms": 157.578,
+            "max_ms": 159.54,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "image": {
+            "output_shape": [
+              32,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 32,
+            "mean_ms": 9201.217,
+            "mean_ms_per_embedding": 287.538,
+            "stdev_ms": 28.381,
+            "min_ms": 9153.451,
+            "max_ms": 9251.406,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "fused": {
+            "output_shape": [
+              32,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 32,
+            "mean_ms": 9327.804,
+            "mean_ms_per_embedding": 291.494,
+            "stdev_ms": 36.447,
+            "min_ms": 9248.196,
+            "max_ms": 9414.862,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          }
+        }
+      }
+    },
+    "INT4": {
+      "construct_ms": 6699.472,
+      "cells": {
+        "1": {
+          "text": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 1,
+            "mean_ms": 25.464,
+            "mean_ms_per_embedding": 25.464,
+            "stdev_ms": 0.17,
+            "min_ms": 25.198,
+            "max_ms": 25.932,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "image": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 1,
+            "mean_ms": 208.974,
+            "mean_ms_per_embedding": 208.974,
+            "stdev_ms": 0.4,
+            "min_ms": 208.19,
+            "max_ms": 209.852,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "fused": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 1,
+            "mean_ms": 215.32,
+            "mean_ms_per_embedding": 215.32,
+            "stdev_ms": 5.344,
+            "min_ms": 211.557,
+            "max_ms": 227.309,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          }
+        },
+        "2": {
+          "text": {
+            "output_shape": [
+              2,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 2,
+            "mean_ms": 29.599,
+            "mean_ms_per_embedding": 14.8,
+            "stdev_ms": 0.212,
+            "min_ms": 29.367,
+            "max_ms": 30.128,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "image": {
+            "output_shape": [
+              2,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 2,
+            "mean_ms": 405.795,
+            "mean_ms_per_embedding": 202.898,
+            "stdev_ms": 1.116,
+            "min_ms": 404.688,
+            "max_ms": 410.294,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "fused": {
+            "output_shape": [
+              2,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 2,
+            "mean_ms": 410.605,
+            "mean_ms_per_embedding": 205.303,
+            "stdev_ms": 3.146,
+            "min_ms": 408.048,
+            "max_ms": 420.344,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          }
+        },
+        "4": {
+          "text": {
+            "output_shape": [
+              4,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 4,
+            "mean_ms": 36.736,
+            "mean_ms_per_embedding": 9.184,
+            "stdev_ms": 0.416,
+            "min_ms": 36.266,
+            "max_ms": 37.94,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "image": {
+            "output_shape": [
+              4,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 4,
+            "mean_ms": 797.581,
+            "mean_ms_per_embedding": 199.395,
+            "stdev_ms": 10.223,
+            "min_ms": 787.961,
+            "max_ms": 827.784,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "fused": {
+            "output_shape": [
+              4,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 4,
+            "mean_ms": 796.904,
+            "mean_ms_per_embedding": 199.226,
+            "stdev_ms": 1.268,
+            "min_ms": 795.699,
+            "max_ms": 801.923,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          }
+        },
+        "8": {
+          "text": {
+            "output_shape": [
+              8,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 8,
+            "mean_ms": 52.629,
+            "mean_ms_per_embedding": 6.579,
+            "stdev_ms": 0.241,
+            "min_ms": 52.166,
+            "max_ms": 53.005,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "image": {
+            "output_shape": [
+              8,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 8,
+            "mean_ms": 1568.491,
+            "mean_ms_per_embedding": 196.061,
+            "stdev_ms": 10.568,
+            "min_ms": 1558.495,
+            "max_ms": 1596.063,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "fused": {
+            "output_shape": [
+              8,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 8,
+            "mean_ms": 1596.32,
+            "mean_ms_per_embedding": 199.54,
+            "stdev_ms": 3.196,
+            "min_ms": 1593.534,
+            "max_ms": 1603.509,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          }
+        },
+        "16": {
+          "text": {
+            "output_shape": [
+              16,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 16,
+            "mean_ms": 86.313,
+            "mean_ms_per_embedding": 5.395,
+            "stdev_ms": 0.31,
+            "min_ms": 85.945,
+            "max_ms": 87.31,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "image": {
+            "output_shape": [
+              16,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 16,
+            "mean_ms": 3138.425,
+            "mean_ms_per_embedding": 196.152,
+            "stdev_ms": 33.461,
+            "min_ms": 3100.18,
+            "max_ms": 3172.612,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "fused": {
+            "output_shape": [
+              16,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 16,
+            "mean_ms": 3239.062,
+            "mean_ms_per_embedding": 202.441,
+            "stdev_ms": 21.446,
+            "min_ms": 3231.1,
+            "max_ms": 3329.256,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          }
+        },
+        "32": {
+          "text": {
+            "output_shape": [
+              32,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 32,
+            "mean_ms": 152.902,
+            "mean_ms_per_embedding": 4.778,
+            "stdev_ms": 0.261,
+            "min_ms": 152.558,
+            "max_ms": 153.326,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "image": {
+            "output_shape": [
+              32,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 32,
+            "mean_ms": 6353.541,
+            "mean_ms_per_embedding": 198.548,
+            "stdev_ms": 6.876,
+            "min_ms": 6349.797,
+            "max_ms": 6382.142,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "fused": {
+            "output_shape": [
+              32,
+              2048
+            ],
+            "output_dimension": 2048,
+            "batch_size": 32,
+            "mean_ms": 6477.098,
+            "mean_ms_per_embedding": 202.409,
+            "stdev_ms": 29.001,
+            "min_ms": 6442.167,
+            "max_ms": 6520.225,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          }
+        }
+      }
+    }
+  },
+  "environment": {
+    "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "packages": {
+      "openvino": "2026.3.0",
+      "openvino-genai": "2026.3.0.0",
+      "numpy": "2.4.6",
+      "Pillow": "12.3.0"
+    },
+    "available_devices": [
+      "CPU",
+      "GPU"
+    ]
+  }
+}

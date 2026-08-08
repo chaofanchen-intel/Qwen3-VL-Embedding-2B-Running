@@ -1,0 +1,553 @@
+{
+  "suite": "detailed",
+  "devices": [
+    "GPU"
+  ],
+  "precisions": [
+    "INT8",
+    "INT4"
+  ],
+  "text_lengths": [
+    32,
+    64,
+    128,
+    256,
+    512,
+    1024
+  ],
+  "output_dimension": 2048,
+  "image_sizes": [
+    "64x64",
+    "224x224",
+    "448x448",
+    "672x672",
+    "960x480"
+  ],
+  "workloads": {
+    "texts": {
+      "32": {
+        "text": "a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a",
+        "token_count": 32
+      },
+      "64": {
+        "text": "a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a",
+        "token_count": 64
+      },
+      "128": {
+        "text": "a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a",
+        "token_count": 128
+      },
+      "256": {
+        "text": "a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a",
+        "token_count": 256
+      },
+      "512": {
+        "text": "a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a",
+        "token_count": 512
+      },
+      "1024": {
+        "text": "a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a",
+        "token_count": 1024
+      }
+    },
+    "images": {
+      "64x64": {
+        "path": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/benchmark_results/assets/gradient_64x64.png"
+      },
+      "224x224": {
+        "path": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/benchmark_results/assets/gradient_224x224.png"
+      },
+      "448x448": {
+        "path": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/benchmark_results/assets/gradient_448x448.png"
+      },
+      "672x672": {
+        "path": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/benchmark_results/assets/gradient_672x672.png"
+      },
+      "960x480": {
+        "path": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/benchmark_results/assets/gradient_960x480.png"
+      }
+    }
+  },
+  "results": {
+    "INT8": {
+      "construct_ms": 5676.797,
+      "text": {
+        "32": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 44.69,
+          "stdev_ms": 0.36,
+          "min_ms": 44.348,
+          "max_ms": 45.604,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "64": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 50.072,
+          "stdev_ms": 0.219,
+          "min_ms": 49.685,
+          "max_ms": 50.385,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "128": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 60.993,
+          "stdev_ms": 0.31,
+          "min_ms": 60.673,
+          "max_ms": 61.684,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "256": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 99.896,
+          "stdev_ms": 0.177,
+          "min_ms": 99.65,
+          "max_ms": 100.316,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "512": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 171.631,
+          "stdev_ms": 0.231,
+          "min_ms": 171.222,
+          "max_ms": 172.12,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "1024": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 361.148,
+          "stdev_ms": 0.906,
+          "min_ms": 359.823,
+          "max_ms": 363.557,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        }
+      },
+      "image": {
+        "64x64": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 52.257,
+          "stdev_ms": 0.168,
+          "min_ms": 52.02,
+          "max_ms": 52.632,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "224x224": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 88.972,
+          "stdev_ms": 0.321,
+          "min_ms": 88.609,
+          "max_ms": 89.927,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "448x448": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 214.067,
+          "stdev_ms": 2.724,
+          "min_ms": 212.241,
+          "max_ms": 219.606,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "672x672": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 639.99,
+          "stdev_ms": 1.233,
+          "min_ms": 638.936,
+          "max_ms": 643.892,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "960x480": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 674.762,
+          "stdev_ms": 0.766,
+          "min_ms": 673.095,
+          "max_ms": 676.178,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        }
+      },
+      "fused": {
+        "64x64": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 55.345,
+          "stdev_ms": 0.401,
+          "min_ms": 54.559,
+          "max_ms": 56.085,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "224x224": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 91.713,
+          "stdev_ms": 0.312,
+          "min_ms": 91.24,
+          "max_ms": 92.557,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "448x448": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 214.0,
+          "stdev_ms": 0.476,
+          "min_ms": 213.137,
+          "max_ms": 215.299,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "672x672": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 641.218,
+          "stdev_ms": 0.539,
+          "min_ms": 640.519,
+          "max_ms": 642.924,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "960x480": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 674.615,
+          "stdev_ms": 0.814,
+          "min_ms": 673.371,
+          "max_ms": 676.192,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        }
+      }
+    },
+    "INT4": {
+      "construct_ms": 5674.82,
+      "text": {
+        "32": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 28.996,
+          "stdev_ms": 0.223,
+          "min_ms": 28.712,
+          "max_ms": 29.513,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "64": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 38.029,
+          "stdev_ms": 0.196,
+          "min_ms": 37.804,
+          "max_ms": 38.525,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "128": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 58.107,
+          "stdev_ms": 0.151,
+          "min_ms": 57.844,
+          "max_ms": 58.313,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "256": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 90.487,
+          "stdev_ms": 0.277,
+          "min_ms": 90.013,
+          "max_ms": 91.036,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "512": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 166.214,
+          "stdev_ms": 0.927,
+          "min_ms": 165.36,
+          "max_ms": 169.363,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "1024": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 351.624,
+          "stdev_ms": 1.153,
+          "min_ms": 350.021,
+          "max_ms": 354.041,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        }
+      },
+      "image": {
+        "64x64": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 37.442,
+          "stdev_ms": 0.233,
+          "min_ms": 37.121,
+          "max_ms": 37.979,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "224x224": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 65.525,
+          "stdev_ms": 0.275,
+          "min_ms": 64.995,
+          "max_ms": 66.048,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "448x448": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 209.87,
+          "stdev_ms": 2.78,
+          "min_ms": 207.695,
+          "max_ms": 215.744,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "672x672": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 638.174,
+          "stdev_ms": 1.638,
+          "min_ms": 635.556,
+          "max_ms": 641.188,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "960x480": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 676.311,
+          "stdev_ms": 0.244,
+          "min_ms": 675.81,
+          "max_ms": 676.757,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        }
+      },
+      "fused": {
+        "64x64": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 40.897,
+          "stdev_ms": 0.706,
+          "min_ms": 40.238,
+          "max_ms": 42.323,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "224x224": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 66.97,
+          "stdev_ms": 0.311,
+          "min_ms": 66.404,
+          "max_ms": 67.452,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "448x448": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 211.232,
+          "stdev_ms": 0.43,
+          "min_ms": 210.757,
+          "max_ms": 212.439,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "672x672": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 641.609,
+          "stdev_ms": 0.419,
+          "min_ms": 640.716,
+          "max_ms": 642.312,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        },
+        "960x480": {
+          "output_shape": [
+            1,
+            2048
+          ],
+          "output_dimension": 2048,
+          "mean_ms": 677.487,
+          "stdev_ms": 0.566,
+          "min_ms": 676.751,
+          "max_ms": 679.061,
+          "repeat": 20,
+          "warmup": 3,
+          "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+        }
+      }
+    }
+  },
+  "environment": {
+    "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "packages": {
+      "openvino": "2026.3.0",
+      "openvino-genai": "2026.3.0.0",
+      "numpy": "2.4.6",
+      "Pillow": "12.3.0"
+    },
+    "available_devices": [
+      "CPU",
+      "GPU"
+    ]
+  }
+}

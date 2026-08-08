@@ -1,0 +1,310 @@
+{
+  "suite": "baseline",
+  "workload": {
+    "text": "a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a",
+    "token_count": 32,
+    "image": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/benchmark_results/assets/gradient_448x448.png"
+  },
+  "results": {
+    "CPU": {
+      "FP32": {
+        "construct_ms": 5684.58,
+        "modes": {
+          "text": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "mean_ms": 490.22,
+            "stdev_ms": 1.032,
+            "min_ms": 488.626,
+            "max_ms": 492.839,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "image": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "mean_ms": 5679.359,
+            "stdev_ms": 2.158,
+            "min_ms": 5676.338,
+            "max_ms": 5684.42,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "fused": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "mean_ms": 6102.187,
+            "stdev_ms": 2.034,
+            "min_ms": 6098.579,
+            "max_ms": 6106.362,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          }
+        }
+      },
+      "INT8": {
+        "construct_ms": 2867.633,
+        "modes": {
+          "text": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "mean_ms": 196.525,
+            "stdev_ms": 0.157,
+            "min_ms": 196.31,
+            "max_ms": 196.785,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "image": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "mean_ms": 2882.387,
+            "stdev_ms": 0.811,
+            "min_ms": 2880.918,
+            "max_ms": 2883.707,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "fused": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "mean_ms": 2994.925,
+            "stdev_ms": 0.849,
+            "min_ms": 2993.298,
+            "max_ms": 2996.721,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          }
+        }
+      },
+      "INT4": {
+        "construct_ms": 3320.689,
+        "modes": {
+          "text": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "mean_ms": 226.861,
+            "stdev_ms": 0.359,
+            "min_ms": 226.556,
+            "max_ms": 227.726,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "image": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "mean_ms": 3089.002,
+            "stdev_ms": 2.643,
+            "min_ms": 3084.848,
+            "max_ms": 3094.228,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "fused": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "mean_ms": 3258.87,
+            "stdev_ms": 47.128,
+            "min_ms": 3245.702,
+            "max_ms": 3458.966,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          }
+        }
+      }
+    },
+    "GPU": {
+      "FP32": {
+        "construct_ms": 9960.006,
+        "modes": {
+          "text": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "mean_ms": 77.979,
+            "stdev_ms": 0.714,
+            "min_ms": 77.451,
+            "max_ms": 80.7,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "image": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "mean_ms": 263.034,
+            "stdev_ms": 0.344,
+            "min_ms": 262.412,
+            "max_ms": 263.931,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "fused": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "mean_ms": 269.777,
+            "stdev_ms": 0.818,
+            "min_ms": 268.822,
+            "max_ms": 272.05,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          }
+        }
+      },
+      "INT8": {
+        "construct_ms": 6601.519,
+        "modes": {
+          "text": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "mean_ms": 53.12,
+            "stdev_ms": 0.114,
+            "min_ms": 52.871,
+            "max_ms": 53.275,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "image": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "mean_ms": 266.036,
+            "stdev_ms": 0.765,
+            "min_ms": 265.032,
+            "max_ms": 267.508,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "fused": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "mean_ms": 253.555,
+            "stdev_ms": 18.421,
+            "min_ms": 226.761,
+            "max_ms": 272.554,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          }
+        }
+      },
+      "INT4": {
+        "construct_ms": 6514.803,
+        "modes": {
+          "text": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "mean_ms": 29.054,
+            "stdev_ms": 0.152,
+            "min_ms": 28.837,
+            "max_ms": 29.487,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "image": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "mean_ms": 255.037,
+            "stdev_ms": 18.681,
+            "min_ms": 224.636,
+            "max_ms": 272.375,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          },
+          "fused": {
+            "output_shape": [
+              1,
+              2048
+            ],
+            "output_dimension": 2048,
+            "mean_ms": 262.119,
+            "stdev_ms": 22.49,
+            "min_ms": 222.55,
+            "max_ms": 281.377,
+            "repeat": 20,
+            "warmup": 3,
+            "timing_scope": "warm native 2048-dimensional embed; model construction excluded"
+          }
+        }
+      }
+    }
+  },
+  "environment": {
+    "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "packages": {
+      "openvino": "2026.3.0",
+      "openvino-genai": "2026.3.0.0",
+      "numpy": "2.4.6",
+      "Pillow": "12.3.0"
+    },
+    "available_devices": [
+      "CPU",
+      "GPU"
+    ]
+  }
+}
