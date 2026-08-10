@@ -15,5 +15,9 @@
     16,
     32
   ],
+  "batch_text_length_values": [128, 256, 512, 1024],
+  "batch_text_length_repeat": 5,
+  "batch_text_length_warmup": 3,
+  "batch_text_length_result": "batch_text_lengths.json",
   "note": "OpenVINO GenAI returns native 2048 dimensions. MRL prefix truncation is post-processing and is not a separate latency case."
 }

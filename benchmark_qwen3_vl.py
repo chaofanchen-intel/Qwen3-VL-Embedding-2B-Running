@@ -27,6 +27,7 @@ PRECISIONS = ["FP32", "INT8", "INT4"]
 DEVICES = ["CPU", "GPU"]
 MODES = ["text", "image", "fused"]
 BATCH_SIZES = [1, 2, 4, 8, 16, 32]
+BATCH_TEXT_LENGTHS = [128, 256, 512, 1024]
 TEXT = "What causes the halo effect on the edge bump?"
 
 
@@ -225,6 +226,67 @@ def run_batch(
     return result
 
 
+def run_batch_text_lengths(
+    models_root: Path,
+    image_path: Path,
+    repeat: int,
+    warmup: int,
+    modes: tuple[str, ...] = ("text", "fused"),
+    precisions: tuple[str, ...] = ("INT8", "INT4"),
+    text_lengths: tuple[int, ...] = tuple(BATCH_TEXT_LENGTHS),
+    batch_sizes: tuple[int, ...] = tuple(BATCH_SIZES),
+) -> dict[str, Any]:
+    """Measure text/fused batch scaling at multiple exact effective lengths."""
+    core = ov.Core()
+    result: dict[str, Any] = {
+        "suite": "batch_text_lengths",
+        "device": "GPU",
+        "precisions": list(precisions),
+        "modes": list(modes),
+        "text_lengths": list(text_lengths),
+        "batch_sizes": list(batch_sizes),
+        "output_dimension": 2048,
+        "workload": {
+            "image": str(image_path),
+            "image_size_wh": list(Image.open(image_path).size),
+            "semantics": "one API call returns N rows; text is a true batch; fused uses one shared image and N text rows",
+        },
+        "results": {},
+    }
+    if "GPU" not in core.available_devices:
+        result["status"] = "GPU unavailable"
+        return result
+
+    tokenizer = openvino_genai.Tokenizer(str(models_root / "Qwen3-VL-Embedding-2B-INT8"))
+    texts = {str(length): make_text(tokenizer, length)[0] for length in text_lengths}
+    image = load_image_tensor(image_path) if "fused" in modes else None
+    for precision in precisions:
+        model_dir = models_root / f"Qwen3-VL-Embedding-2B-{precision}"
+        started = time.perf_counter()
+        pipeline = openvino_genai.EmbeddingPipeline(str(model_dir), "GPU")
+        precision_result: dict[str, Any] = {
+            "construct_ms": round((time.perf_counter() - started) * 1000, 3),
+            "lengths": {},
+        }
+        result["results"][precision] = precision_result
+        for length, text in texts.items():
+            length_result: dict[str, Any] = {"token_count": int(length), "cells": {}}
+            precision_result["lengths"][length] = length_result
+            for batch_size in batch_sizes:
+                batch_texts = [text] * batch_size
+                calls: dict[str, Callable[[], Any]] = {}
+                if "text" in modes:
+                    calls["text"] = lambda batch_texts=batch_texts: pipeline.embed(batch_texts)
+                if "fused" in modes:
+                    calls["fused"] = lambda batch_texts=batch_texts: pipeline.embed(batch_texts, images=[image])
+                length_result["cells"][str(batch_size)] = {
+                    mode: timed_embedding(call, repeat, warmup, batch_size)
+                    for mode, call in calls.items()
+                }
+                print(f"batch-length GPU {precision} tokens={length} N={batch_size}")
+    return result
+
+
 def run_detailed(
     models_root: Path,
     assets: dict[str, Path],
@@ -284,6 +346,7 @@ def markdown_report(
     baseline: dict[str, Any] | None,
     detailed: dict[str, Any] | None,
     batch: dict[str, Any] | None,
+    batch_text_lengths: dict[str, Any] | None,
 ) -> str:
     lines = [
         "# Qwen3-VL-Embedding-2B Benchmark Results",
@@ -352,17 +415,62 @@ def markdown_report(
                     f"| {batch_size} | {fmt(cells['text']['mean_ms'])} | {fmt(cells['text']['mean_ms_per_embedding'])} | {fmt(cells['image']['mean_ms'])} | {fmt(cells['image']['mean_ms_per_embedding'])} | {fmt(cells['fused']['mean_ms'])} | {fmt(cells['fused']['mean_ms_per_embedding'])} |"
                 )
             lines.append("")
+    if batch_text_lengths is not None and batch_text_lengths.get("results"):
+        lines += [
+            "## Batch text lengths: GPU INT8/INT4",
+            "",
+            "Text lengths are exact effective tokenizer lengths. `ms/call` is a single batch API call and `ms/embedding` is divided by N. Fused uses the same text batch plus one shared 448x448 image.",
+            "",
+        ]
+        batch_modes = batch_text_lengths.get("modes", ["text", "fused"])
+        columns = ["Tokens", "N"]
+        if "text" in batch_modes:
+            columns += ["Text ms/call", "Text ms/emb"]
+        if "fused" in batch_modes:
+            columns += ["Fused ms/call", "Fused ms/emb"]
+        header = "| " + " | ".join(columns) + " |"
+        separator = "|" + "---:|" * len(columns)
+        for precision, precision_result in batch_text_lengths["results"].items():
+            lines += [f"### {precision}", "", header, separator]
+            for length in batch_text_lengths["text_lengths"]:
+                cells_by_batch = precision_result["lengths"][str(length)]["cells"]
+                for batch_size in batch_text_lengths["batch_sizes"]:
+                    if str(batch_size) not in cells_by_batch:
+                        continue
+                    cells = cells_by_batch[str(batch_size)]
+                    values = [str(length), str(batch_size)]
+                    if "text" in batch_modes:
+                        values += [fmt(cells["text"]["mean_ms"]), fmt(cells["text"]["mean_ms_per_embedding"])]
+                    if "fused" in batch_modes:
+                        values += [fmt(cells["fused"]["mean_ms"]), fmt(cells["fused"]["mean_ms_per_embedding"])]
+                    lines.append("| " + " | ".join(values) + " |")
+            lines.append("")
+        if batch_text_lengths.get("resource_failures"):
+            lines += [
+                "### Resource limits",
+                "",
+                "The 1024-token N=32 cell was not assigned a latency: the GPU aborted with `CL_OUT_OF_RESOURCES` during `FullyConnectedCompressed` execution. The safe measured range for 1024 tokens is N=1/2/4/8/16; shorter lengths completed through N=32.",
+                "",
+            ]
     return "\n".join(lines).rstrip() + "\n"
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--suite", choices=("baseline", "detailed", "batch", "all"), default="all")
+    parser.add_argument("--suite", choices=("baseline", "detailed", "batch", "batch-text-lengths", "all"), default="all")
     parser.add_argument("--models-root", type=Path, default=DEFAULT_MODELS_ROOT)
     parser.add_argument("--image", type=Path, help="baseline image; default is the generated 448x448 workload")
     parser.add_argument("--results", type=Path, default=DEFAULT_RESULTS)
     parser.add_argument("--repeat", type=int, default=3)
     parser.add_argument("--warmup", type=int, default=1)
+    parser.add_argument("--batch-text-modes", default="text,fused",
+                        help="batch-text-lengths modes: text,fused (use text for a resource-isolated run)")
+    parser.add_argument("--batch-text-precisions", default="INT8,INT4",
+                        help="batch-text-lengths precisions")
+    parser.add_argument("--batch-text-lengths-values", default="128,256,512,1024",
+                        help="batch-text-lengths exact token values")
+    parser.add_argument("--batch-text-batches", default="1,2,4,8,16,32",
+                        help="batch-text-lengths N values")
     args = parser.parse_args()
     if args.repeat < 1 or args.warmup < 0:
         raise SystemExit("--repeat must be positive and --warmup must be non-negative")
@@ -375,6 +483,7 @@ def main() -> None:
     baseline = None
     detailed = None
     batch = None
+    batch_text_lengths = None
     if args.suite in ("baseline", "all"):
         baseline_image = args.image.expanduser().resolve() if args.image else assets["448x448"]
         baseline = run_baseline(models_root, baseline_image, DEVICES, PRECISIONS, args.repeat, args.warmup)
@@ -395,8 +504,29 @@ def main() -> None:
         (results_dir / "batch.json").write_text(json.dumps(batch, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     elif (results_dir / "batch.json").is_file():
         batch = json.loads((results_dir / "batch.json").read_text(encoding="utf-8"))
+    if args.suite in ("batch-text-lengths", "all"):
+        batch_image = args.image.expanduser().resolve() if args.image else assets["448x448"]
+        modes = tuple(value.strip() for value in args.batch_text_modes.split(",") if value.strip())
+        precisions = tuple(value.strip().upper() for value in args.batch_text_precisions.split(",") if value.strip())
+        if not modes or any(value not in {"text", "fused"} for value in modes):
+            raise SystemExit("--batch-text-modes must contain text and/or fused")
+        if not precisions or any(value not in {"INT8", "INT4"} for value in precisions):
+            raise SystemExit("--batch-text-precisions must contain INT8 and/or INT4")
+        lengths = tuple(int(value) for value in args.batch_text_lengths_values.split(",") if value.strip())
+        batch_values = tuple(int(value) for value in args.batch_text_batches.split(",") if value.strip())
+        if not lengths or any(value not in TEXT_LENGTHS for value in lengths):
+            raise SystemExit(f"--batch-text-lengths-values must be from {TEXT_LENGTHS}")
+        if not batch_values or any(value < 1 for value in batch_values):
+            raise SystemExit("--batch-text-batches must contain positive integers")
+        batch_text_lengths = run_batch_text_lengths(
+            models_root, batch_image, args.repeat, args.warmup, modes, precisions, lengths, batch_values
+        )
+        batch_text_lengths["environment"] = environment
+        (results_dir / "batch_text_lengths.json").write_text(json.dumps(batch_text_lengths, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    elif (results_dir / "batch_text_lengths.json").is_file():
+        batch_text_lengths = json.loads((results_dir / "batch_text_lengths.json").read_text(encoding="utf-8"))
     report_path = results_dir / "BENCHMARK_RESULTS.md"
-    report_path.write_text(markdown_report(baseline, detailed, batch), encoding="utf-8")
+    report_path.write_text(markdown_report(baseline, detailed, batch, batch_text_lengths), encoding="utf-8")
     manifest = {
         "script": str(Path(__file__).resolve()),
         "suite": args.suite,
@@ -405,6 +535,7 @@ def main() -> None:
         "baseline_output_dimension": 2048,
         "detailed_output_dimension": 2048,
         "batch_sizes": BATCH_SIZES,
+        "batch_text_lengths": BATCH_TEXT_LENGTHS,
         "note": "OpenVINO GenAI returns native 2048 dimensions. MRL prefix truncation is post-processing and is not a separate latency case.",
     }
     (results_dir / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")

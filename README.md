@@ -58,6 +58,7 @@ OpenVINO GenAI 的 `EmbeddingPipeline` 原生返回 2048 维。MRL 允许使用
 python benchmark_qwen3_vl.py --suite baseline --repeat 3 --warmup 1
 python benchmark_qwen3_vl.py --suite detailed --repeat 3 --warmup 1
 python benchmark_qwen3_vl.py --suite batch --repeat 3 --warmup 1
+python benchmark_qwen3_vl.py --suite batch-text-lengths --batch-text-modes text --repeat 5 --warmup 3
 ```
 
 正式结果建议使用至少 20 次 warm call：
@@ -71,6 +72,7 @@ python benchmark_qwen3_vl.py --suite all --repeat 20 --warmup 3
 - `baseline.json`：全精度、CPU/GPU 基线原始结果；
 - `detailed.json`：长度、图像尺寸、输出维度的完整矩阵；
 - `batch.json`：GPU INT8/INT4 的 N 扩展结果，包含 `ms/call` 和 `ms/embedding`；
+- `batch_text_lengths.json`：GPU INT8/INT4 在 128/256/512/1024 token 下的 text batch 结果；1024 token 的 N=32 资源失败单独记录；
 - `ENVIRONMENT.json`：硬件、内存、GPU/XVE、驱动、OpenVINO/Python/toolchain 和 benchmark 配置快照；
 - `BENCHMARK_RESULTS.md`：自动生成的可读表格；
 - `manifest.json`：测试参数和维度语义；

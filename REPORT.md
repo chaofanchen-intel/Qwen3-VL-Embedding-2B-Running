@@ -313,6 +313,29 @@ INT8/INT4 和 N=1/2/4/8/16/32；每个 N 的 text/image/fused 输出 shape 分�
 `[N,2048]`。baseline 和 detailed 结果同样保留在对应 JSON 中，当前汇总页是三套结果
 的合并视图。
 
+### 多长度 batch 补测
+
+为解释 Qwen3 在 1024 token 与 GME 的 Python/C++ 数字差异，并补齐实际服务批量场景，
+新增 [batch_text_lengths.json](benchmark_results/batch_text_lengths.json)：
+
+- GPU INT8/INT4；
+- exact effective text lengths：128、256、512、1024 tokens；
+- N=1、2、4、8、16、32；
+- `repeat=5`、`warmup=3`；
+- native output `[N,2048]`。
+
+128/256/512 三个长度在两种精度下均完成 N=1..32。1024 token 在 N=1..16 完成；
+N=32 会触发 GPU `CL_OUT_OF_RESOURCES`，错误出现在 `FullyConnectedCompressed` 的
+GPU execution/`clFinish` 路径，因此没有伪造 latency 值，失败信息保存在 JSON 的
+`resource_failures` 中。
+
+GME 的 08 矩阵中 Python/C++ 1024-token 单值不可直接与 Qwen3 数字比较：已有的 09
+交替 steady-state 复测显示，INT4 Python text/query 约 283 ms，而 C++ text 会受
+GPU boost/throttle 状态影响，median 约 507 ms，query 约 346 ms；C++ 的单次分布跨越
+多个功耗状态。这说明此前“Qwen3 比 GME Python 慢很多、但接近 GME C++”主要是测量
+状态不一致和 C++ session 波动，不足以证明模型实现本身的固定差距。新的 Qwen3 多长度
+batch 结果应优先与同样 warmup、同样进程生命周期和同样 GPU 电源状态的 GME 复测比较。
+
 ### 结果阅读规则
 
 - baseline 先回答哪种 precision/device/mode 最快；
