@@ -1,6 +1,7 @@
 {
   "script": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/benchmark_qwen3_vl.py",
   "environment_snapshot": "ENVIRONMENT.json",
+  "environment_memory_source": "user-provided sudo dmidecode 3.5 output in /home/chaofan/model_benchmark/info.txt",
   "suite": "all",
   "repeat": 20,
   "warmup": 3,

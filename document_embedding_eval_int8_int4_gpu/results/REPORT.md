@@ -16,7 +16,7 @@ The complete machine-readable environment snapshot is shared with the main bench
 | GPU execution | 32 OpenVINO execution units, 32 OpenCL compute units, 32 VTune XVEs |
 | GPU memory | Approximately 28.6 GiB reported by OpenVINO/OpenCL |
 | Host memory | 32 GiB class, OS `MemTotal` 30.89 GiB, swap 8 GiB |
-| RAM speed | DDR5-5600 user-provided; not independently verified through current non-root DMI access |
+| RAM speed | DDR5-5600, configured speed 5600 MT/s, verified by `sudo dmidecode`; Micron 32 GB SODIMM |
 | OS / kernel | Ubuntu 24.04.4 LTS / Linux 7.0.0-28-generic |
 | Runtime | OpenVINO 2026.3.0 + patched OpenVINO GenAI 2026.3.0.0 |
 | Python | 3.12.3 in `qwen_env` |

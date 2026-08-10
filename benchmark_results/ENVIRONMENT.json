@@ -1,159 +1,235 @@
 {
-  "snapshot_type": "benchmark_hardware_software_environment",
-  "captured_at": "2026-08-10T22:02:02+08:00",
-  "note": "Hardware snapshot captured after the benchmark runs on the same host. Values readable from the host are recorded as measured; memory speed is marked separately because firmware DMI data was not readable without elevated privileges.",
-  "host": {
-    "hostname": "user-M2",
-    "hardware_model": "M2",
-    "manufacturer": "Meigao Innovation Technology (Shen Zhen) Co., Ltd",
-    "product_name": "M2",
-    "product_version": "V1.1",
-    "board_name": "PTBNB",
-    "product_family": "AI Mini",
-    "firmware": {
-      "vendor": "American Megatrends International, LLC.",
-      "version": "PB19V1.14",
-      "date": "2026-03-26"
-    }
-  },
-  "operating_system": {
-    "distribution": "Ubuntu 24.04.4 LTS",
-    "kernel": "Linux 7.0.0-28-generic",
-    "architecture": "x86_64",
-    "glibc": "2.39"
-  },
-  "cpu": {
-    "model": "Intel(R) Core(TM) Ultra 7 356H",
-    "family": "Intel Panther Lake-P",
-    "sockets": 1,
-    "cores_per_socket": 16,
-    "logical_cpus": 16,
-    "threads_per_core_reported": 1,
-    "numa_nodes": 1,
-    "cache": {
-      "l1d": "576 KiB total, 16 instances",
-      "l1i": "1 MiB total, 16 instances",
-      "l2": "24 MiB total, 7 instances",
-      "l3": "18 MiB total, 1 instance"
+    "snapshot_type": "benchmark_hardware_software_environment",
+    "captured_at": "2026-08-10T22:02:02+08:00",
+    "note": "Hardware snapshot captured after the benchmark runs on the same host. DMI memory fields below come from the user-provided sudo dmidecode 3.5 output. Serial numbers and UUIDs are intentionally omitted.",
+    "host": {
+        "hostname": "user-M2",
+        "hardware_model": "M2",
+        "system_manufacturer": "Micro Computer (HK) Tech Limited",
+        "product_name": "M2",
+        "product_version": "V1.1",
+        "board_name": "PTBNB",
+        "board_vendor": "Meigao Innovation Technology (Shen Zhen) Co., Ltd",
+        "board_version": "V1.1",
+        "chassis_type": "Mini PC",
+        "product_family": "AI Mini",
+        "firmware": {
+            "vendor": "American Megatrends International, LLC.",
+            "version": "PB19V1.14",
+            "date": "2026-03-26",
+            "bios_revision": "5.39",
+            "firmware_revision": "1.6"
+        }
     },
-    "frequency_policy": {
-      "driver": "intel_pstate",
-      "status": "active",
-      "governor": "powersave",
-      "cpuinfo_max_khz": 1900000,
-      "sampled_cpu0_cur_khz": 658767
-    }
-  },
-  "memory": {
-    "installed_capacity": "32 GiB class",
-    "lshw_reported_bytes": 34091302912,
-    "os_memtotal_bytes": 33167351808,
-    "os_memtotal_gib": 30.89,
-    "os_memavailable_at_snapshot_bytes": 23917830144,
-    "os_memavailable_at_snapshot_gib": 22.27,
-    "swap_total_bytes": 8589930496,
-    "swap_total_gib": 8.0,
-    "swap_free_at_snapshot_bytes": 7485726720,
-    "type_and_speed": "DDR5-5600 (user-provided; not independently verified in this session)",
-    "speed_verification": "dmidecode returned no usable DIMM speed fields without elevated access; EDAC exposed an inconsistent Unbuffered-DDR3 label, so that label is not treated as authoritative."
-  },
-  "gpu": {
-    "vendor": "Intel",
-    "name": "Intel(R) Graphics (iGPU)",
-    "pci_address": "0000:00:02.0",
-    "pci_vendor_id": "0x8086",
-    "pci_device_id": "0xb0a0",
-    "kernel_driver": "xe",
-    "kernel_module": "xe",
-    "gpu_uarch_version": "30.1.0",
-    "openvino_device_architecture": "GPU: vendor=0x8086 arch=v30.1.0",
-    "openvino_execution_units": 32,
-    "opencl_compute_units": 32,
-    "vtune_xve_count": 32,
-    "vtune_max_xve_threads": 10,
-    "reported_hardware_threads": "320 (= 32 XVE x 10 threads), based on VTune XVE counters",
-    "xe_core_count": "Not directly exposed by the installed runtime; 32 XVE/32 OpenCL compute units are the measured figures and are not silently converted to a Xe-core count.",
-    "total_device_memory_bytes": 30705451008,
-    "total_device_memory_gib": 28.6,
-    "max_alloc_memory_bytes": 30705451008,
-    "opencl": {
-      "platform": "Intel(R) OpenCL Graphics",
-      "platform_version": "OpenCL 3.0 LINUX",
-      "device_version": "OpenCL 3.0 NEO",
-      "driver_version": "26.22.38646.6",
-      "global_memory_bytes": 30705451008,
-      "local_memory_bytes": 131072
+    "operating_system": {
+        "distribution": "Ubuntu 24.04.4 LTS",
+        "kernel": "Linux 7.0.0-28-generic",
+        "architecture": "x86_64",
+        "glibc": "2.39"
     },
-    "display_resolution_at_snapshot": "3840x2160"
-  },
-  "software": {
-    "python": "3.12.3",
-    "python_environment": "/home/chaofan/envs/qwen_env",
-    "openvino_python": "2026.3.0",
-    "openvino_runtime_build": "2026.3.0-22452-c2638477a62-qwen-ttft-optimizations",
-    "openvino_genai": "2026.3.0.0",
-    "openvino_genai_source": "official 2026.3.0.0 baseline bd8d6542 plus the documented Qwen3-VL fixes",
-    "transformers": "5.0.0",
-    "optimum": "2.3.0",
-    "optimum_intel": "2.1.0",
-    "nncf": "3.2.0",
-    "numpy": "2.4.6",
-    "pillow": "12.3.0",
-    "pymupdf": "1.28.0",
-    "psutil": "7.2.2",
-    "cmake": "3.28.3",
-    "gcc_cxx": "13.3.0",
-    "ninja": "1.13.0.git.kitware.jobserver-pipe-1",
-    "vtune": "2026.3.0 build 632627",
-    "oneapi_environment": "/opt/intel/oneapi/setvars.sh"
-  },
-  "openvino_devices": {
-    "available": ["CPU", "GPU"],
     "cpu": {
-      "full_name": "Intel(R) Core(TM) Ultra 7 356H",
-      "device_type": "INTEGRATED",
-      "architecture": "intel64",
-      "optimization_capabilities": ["BF16", "FP32", "FP16", "INT8", "BIN", "EXPORT_IMPORT"]
+        "model": "Intel(R) Core(TM) Ultra 7 356H",
+        "family": "Intel Panther Lake-P",
+        "sockets": 1,
+        "cores_per_socket": 16,
+        "logical_cpus": 16,
+        "threads_per_core_reported": 1,
+        "numa_nodes": 1,
+        "dmi_max_speed_mhz": 4700,
+        "dmi_current_speed_mhz": 4700,
+        "cache": {
+            "l1d": "576 KiB total, 16 instances",
+            "l1i": "1 MiB total, 16 instances",
+            "l2": "24 MiB total, 7 instances",
+            "l3": "18 MiB total, 1 instance"
+        },
+        "frequency_policy": {
+            "driver": "intel_pstate",
+            "status": "active",
+            "governor": "powersave",
+            "cpuinfo_max_khz": 1900000,
+            "sampled_cpu0_cur_khz": 658767
+        }
+    },
+    "memory": {
+        "installed_capacity": "32 GiB class",
+        "lshw_reported_bytes": 34091302912,
+        "os_memtotal_bytes": 33167351808,
+        "os_memtotal_gib": 30.89,
+        "os_memavailable_at_snapshot_bytes": 23917830144,
+        "os_memavailable_at_snapshot_gib": 22.27,
+        "swap_total_bytes": 8589930496,
+        "swap_total_gib": 8.0,
+        "swap_free_at_snapshot_bytes": 7485726720,
+        "type": "DDR5",
+        "form_factor": "SODIMM",
+        "installed_capacity_gb": 32,
+        "data_width_bits": 64,
+        "manufacturer": "Micron Technology",
+        "part_number": "CT32G56C46S5.C8BA",
+        "speed_mt_s": 5600,
+        "configured_speed_mt_s": 5600,
+        "voltage_v": 1.1,
+        "memory_devices_total": 2,
+        "memory_devices_installed": 1,
+        "memory_devices_empty": 1,
+        "populated_locator": "Controller1-ChannelA-DIMM0",
+        "empty_locator": "Controller0-ChannelA-DIMM0",
+        "type_and_speed": "DDR5-5600",
+        "speed_verification": "Verified from the user-provided sudo dmidecode 3.5 output: Speed 5600 MT/s and Configured Memory Speed 5600 MT/s."
     },
     "gpu": {
-      "full_name": "Intel(R) Graphics (iGPU)",
-      "device_type": "INTEGRATED",
-      "device_id": "0",
-      "pci_info": "0000:00:02.0",
-      "total_memory_bytes": 30705451008,
-      "execution_units": 32,
-      "optimization_capabilities": ["FP32", "BIN", "FP16", "INT8", "GPU_HW_MATMUL", "GPU_USM_MEMORY", "EXPORT_IMPORT"],
-      "gpu_enable_sdpa_optimization": true,
-      "gpu_enable_loop_unrolling": true,
-      "gpu_enable_large_allocations": false
+        "vendor": "Intel",
+        "name": "Intel(R) Graphics (iGPU)",
+        "pci_address": "0000:00:02.0",
+        "pci_vendor_id": "0x8086",
+        "pci_device_id": "0xb0a0",
+        "kernel_driver": "xe",
+        "kernel_module": "xe",
+        "gpu_uarch_version": "30.1.0",
+        "openvino_device_architecture": "GPU: vendor=0x8086 arch=v30.1.0",
+        "openvino_execution_units": 32,
+        "opencl_compute_units": 32,
+        "vtune_xve_count": 32,
+        "vtune_max_xve_threads": 10,
+        "reported_hardware_threads": "320 (= 32 XVE x 10 threads), based on VTune XVE counters",
+        "xe_core_count": "Not directly exposed by the installed runtime; 32 XVE/32 OpenCL compute units are the measured figures and are not silently converted to a Xe-core count.",
+        "total_device_memory_bytes": 30705451008,
+        "total_device_memory_gib": 28.6,
+        "max_alloc_memory_bytes": 30705451008,
+        "opencl": {
+            "platform": "Intel(R) OpenCL Graphics",
+            "platform_version": "OpenCL 3.0 LINUX",
+            "device_version": "OpenCL 3.0 NEO",
+            "driver_version": "26.22.38646.6",
+            "global_memory_bytes": 30705451008,
+            "local_memory_bytes": 131072
+        },
+        "display_resolution_at_snapshot": "3840x2160"
+    },
+    "software": {
+        "python": "3.12.3",
+        "python_environment": "/home/chaofan/envs/qwen_env",
+        "openvino_python": "2026.3.0",
+        "openvino_runtime_build": "2026.3.0-22452-c2638477a62-qwen-ttft-optimizations",
+        "openvino_genai": "2026.3.0.0",
+        "openvino_genai_source": "official 2026.3.0.0 baseline bd8d6542 plus the documented Qwen3-VL fixes",
+        "transformers": "5.0.0",
+        "optimum": "2.3.0",
+        "optimum_intel": "2.1.0",
+        "nncf": "3.2.0",
+        "numpy": "2.4.6",
+        "pillow": "12.3.0",
+        "pymupdf": "1.28.0",
+        "psutil": "7.2.2",
+        "cmake": "3.28.3",
+        "gcc_cxx": "13.3.0",
+        "ninja": "1.13.0.git.kitware.jobserver-pipe-1",
+        "vtune": "2026.3.0 build 632627",
+        "oneapi_environment": "/opt/intel/oneapi/setvars.sh"
+    },
+    "openvino_devices": {
+        "available": [
+            "CPU",
+            "GPU"
+        ],
+        "cpu": {
+            "full_name": "Intel(R) Core(TM) Ultra 7 356H",
+            "device_type": "INTEGRATED",
+            "architecture": "intel64",
+            "optimization_capabilities": [
+                "BF16",
+                "FP32",
+                "FP16",
+                "INT8",
+                "BIN",
+                "EXPORT_IMPORT"
+            ]
+        },
+        "gpu": {
+            "full_name": "Intel(R) Graphics (iGPU)",
+            "device_type": "INTEGRATED",
+            "device_id": "0",
+            "pci_info": "0000:00:02.0",
+            "total_memory_bytes": 30705451008,
+            "execution_units": 32,
+            "optimization_capabilities": [
+                "FP32",
+                "BIN",
+                "FP16",
+                "INT8",
+                "GPU_HW_MATMUL",
+                "GPU_USM_MEMORY",
+                "EXPORT_IMPORT"
+            ],
+            "gpu_enable_sdpa_optimization": true,
+            "gpu_enable_loop_unrolling": true,
+            "gpu_enable_large_allocations": false
+        }
+    },
+    "benchmark_configuration": {
+        "script": "benchmark_qwen3_vl.py",
+        "suite": "all",
+        "baseline": {
+            "precisions": [
+                "FP32",
+                "INT8",
+                "INT4"
+            ],
+            "devices": [
+                "CPU",
+                "GPU"
+            ],
+            "modes": [
+                "text",
+                "image",
+                "fused"
+            ],
+            "text_tokens": 32,
+            "image": "448x448 deterministic RGB gradient",
+            "output_dimension": 2048
+        },
+        "detailed": {
+            "device": "GPU",
+            "precisions": [
+                "INT8",
+                "INT4"
+            ],
+            "text_tokens": [
+                32,
+                64,
+                128,
+                256,
+                512,
+                1024
+            ],
+            "image_sizes": [
+                "64x64",
+                "224x224",
+                "448x448",
+                "672x672",
+                "960x480"
+            ],
+            "output_dimension": 2048
+        },
+        "batch": {
+            "device": "GPU",
+            "precisions": [
+                "INT8",
+                "INT4"
+            ],
+            "batch_sizes": [
+                1,
+                2,
+                4,
+                8,
+                16,
+                32
+            ],
+            "output_dimension": 2048
+        },
+        "repeat": 20,
+        "warmup": 3,
+        "timing": "warm end-to-end EmbeddingPipeline calls; model construction excluded"
     }
-  },
-  "benchmark_configuration": {
-    "script": "benchmark_qwen3_vl.py",
-    "suite": "all",
-    "baseline": {
-      "precisions": ["FP32", "INT8", "INT4"],
-      "devices": ["CPU", "GPU"],
-      "modes": ["text", "image", "fused"],
-      "text_tokens": 32,
-      "image": "448x448 deterministic RGB gradient",
-      "output_dimension": 2048
-    },
-    "detailed": {
-      "device": "GPU",
-      "precisions": ["INT8", "INT4"],
-      "text_tokens": [32, 64, 128, 256, 512, 1024],
-      "image_sizes": ["64x64", "224x224", "448x448", "672x672", "960x480"],
-      "output_dimension": 2048
-    },
-    "batch": {
-      "device": "GPU",
-      "precisions": ["INT8", "INT4"],
-      "batch_sizes": [1, 2, 4, 8, 16, 32],
-      "output_dimension": 2048
-    },
-    "repeat": 20,
-    "warmup": 3,
-    "timing": "warm end-to-end EmbeddingPipeline calls; model construction excluded"
-  }
 }

@@ -10,11 +10,11 @@ configuration, is in [ENVIRONMENT.json](ENVIRONMENT.json).
 
 | Category | Measured value |
 |---|---|
-| Host / OS | M2 AI Mini, Ubuntu 24.04.4 LTS, kernel 7.0.0-28-generic, x86_64 |
+| Host / OS | M2 AI Mini, Micro Computer (HK) Tech Limited, Ubuntu 24.04.4 LTS, kernel 7.0.0-28-generic, x86_64 |
 | CPU | Intel Core Ultra 7 356H, Panther Lake-P, 1 socket, 16 cores, 16 logical CPUs |
 | CPU cache | L1d 576 KiB, L1i 1 MiB, L2 24 MiB, L3 18 MiB |
-| System memory | 32 GiB class; OS `MemTotal` 30.89 GiB; 22.27 GiB available at snapshot |
-| Memory speed | DDR5-5600, **user-provided; not independently readable in this non-root snapshot** |
+| System memory | 32 GB DDR5 SODIMM; 1 of 2 slots populated; Micron Technology; 64-bit; 1.1 V |
+| Memory speed | **5600 MT/s**, configured speed **5600 MT/s**, verified by `sudo dmidecode` |
 | Swap | 8.0 GiB total; 6.97 GiB free at snapshot |
 | GPU | Intel Graphics integrated GPU, PCI `0000:00:02.0`, device `0xb0a0` |
 | GPU driver | Linux `xe`, Intel OpenCL NEO driver `26.22.38646.6` |
@@ -27,9 +27,10 @@ configuration, is in [ENVIRONMENT.json](ENVIRONMENT.json).
 | Key packages | transformers 5.0.0, optimum 2.3.0, optimum-intel 2.1.0, NNCF 3.2.0, NumPy 2.4.6 |
 | Toolchain | CMake 3.28.3, GCC 13.3.0, Ninja 1.13.0, VTune 2026.3.0 build 632627 |
 
-The exact snapshot time was 2026-08-10 22:02:02 +08:00. `dmidecode` did not expose
-usable DIMM speed fields without elevated access; the kernel EDAC label conflicted with
-the user-provided DDR5-5600 platform information, so it is not treated as authoritative.
+The exact snapshot time was 2026-08-10 22:02:02 +08:00. The memory type, module size,
+manufacturer, part number, speed and configured speed were verified from the user-provided
+`sudo dmidecode 3.5` output. The raw DMI output is not copied into the repository because it
+contains machine serial/UUID identifiers; the sanitized fields are in `ENVIRONMENT.json`.
 
 ## Baseline input: exact workload
 

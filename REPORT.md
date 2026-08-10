@@ -27,17 +27,19 @@ text + image embedding。每次调用返回一个 `[1, D]` 向量。
 
 | 项目 | 值 |
 |---|---|
-| CPU | Intel Core Ultra 7 356H，Panther Lake-P，16 cores / 16 logical CPUs |
+| Host/CPU | M2 AI Mini，Intel Core Ultra 7 356H，Panther Lake-P，16 cores / 16 logical CPUs |
+| Firmware/board | AMI PB19V1.14，BIOS revision 5.39，PTBNB V1.1 motherboard |
 | GPU | Intel Graphics integrated GPU，PCI `0000:00:02.0`，device `0xb0a0`，xe driver |
 | Xe/GPU execution | OpenVINO 32 execution units，OpenCL 32 compute units，VTune 32 XVE |
 | GPU memory | 30,705,451,008 bytes，约 28.6 GiB（OpenVINO/OpenCL 报告值） |
-| System RAM | 32 GiB class，OS `MemTotal` 30.89 GiB |
-| RAM speed | DDR5-5600（用户提供；当前无 root DMI 权限，未独立验证） |
+| System RAM | 32 GB DDR5 SODIMM，Micron，1/2 slots populated，64-bit，1.1 V |
+| RAM speed | **5600 MT/s**，configured **5600 MT/s**，已由 `sudo dmidecode` 验证 |
 | Swap | 8 GiB |
 | OS/kernel | Ubuntu 24.04.4 LTS / Linux 7.0.0-28-generic |
 | OpenVINO | 2026.3.0，runtime build `2026.3.0-22452-c2638477a62-qwen-ttft-optimizations` |
 | GenAI | 2026.3.0.0 patched Qwen3-VL build |
 | Python | 3.12.3，`qwen_env` |
+| CPU DMI speed | Max/current 4.7 GHz（DMI）；OS governor snapshot 为 `powersave` |
 | Power policy | `intel_pstate` active，governor `powersave` |
 
 benchmark 的 repeat/warmup、精度、设备、文本长度、图像尺寸和 batch 配置也在该 JSON
