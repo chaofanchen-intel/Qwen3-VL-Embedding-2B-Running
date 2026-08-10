@@ -115,6 +115,10 @@ Qwen3 multimodal API 不支持 GME 风格的 `(text_i, image_i)` 成对 batch，
 [benchmark_results/BENCHMARK_RESULTS.md](benchmark_results/BENCHMARK_RESULTS.md) 为准。
 硬件和软件环境以 [benchmark_results/ENVIRONMENT.json](benchmark_results/ENVIRONMENT.json) 为准。
 
+Qwen3-VL-Embedding 的 text/image/fused 详细数据流、`M x N` 图片 resize、patch/grid、
+视觉 token、image-pad 注入、pooling 和 batch shape 见
+[QWEN3_VL_EMBEDDING_TECHNICAL_DETAILS.md](QWEN3_VL_EMBEDDING_TECHNICAL_DETAILS.md)。
+
 ## 清理说明
 
 旧的 position-id `[3] -> [4]` 实验没有修复问题，已删除。官方 release 的支持边界、

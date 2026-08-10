@@ -47,6 +47,9 @@ benchmark 的 repeat/warmup、精度、设备、文本长度、图像尺寸和 b
 
 ## 2. 运行前提和修复边界
 
+模型的完整 text/image/fused 数据流和任意 `M x N` 图片如何转成视觉 token 的技术说明
+见 [QWEN3_VL_EMBEDDING_TECHNICAL_DETAILS.md](QWEN3_VL_EMBEDDING_TECHNICAL_DETAILS.md)。
+
 模型由官方路径导出：
 
 ```bash
