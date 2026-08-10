@@ -1,5 +1,6 @@
 {
   "script": "/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/benchmark_qwen3_vl.py",
+  "environment_snapshot": "ENVIRONMENT.json",
   "suite": "all",
   "repeat": 20,
   "warmup": 3,

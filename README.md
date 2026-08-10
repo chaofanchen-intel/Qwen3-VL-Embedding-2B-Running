@@ -71,6 +71,7 @@ python benchmark_qwen3_vl.py --suite all --repeat 20 --warmup 3
 - `baseline.json`：全精度、CPU/GPU 基线原始结果；
 - `detailed.json`：长度、图像尺寸、输出维度的完整矩阵；
 - `batch.json`：GPU INT8/INT4 的 N 扩展结果，包含 `ms/call` 和 `ms/embedding`；
+- `ENVIRONMENT.json`：硬件、内存、GPU/XVE、驱动、OpenVINO/Python/toolchain 和 benchmark 配置快照；
 - `BENCHMARK_RESULTS.md`：自动生成的可读表格；
 - `manifest.json`：测试参数和维度语义；
 - `assets/`：确定性梯度图 workload。
@@ -110,6 +111,7 @@ Qwen3 multimodal API 不支持 GME 风格的 `(text_i, image_i)` 成对 batch，
 详细测试计划、计时口径、结果解读和生产迁移注意事项见
 [REPORT.md](REPORT.md)。实际数字以 `benchmark_results/*.json` 和
 [benchmark_results/BENCHMARK_RESULTS.md](benchmark_results/BENCHMARK_RESULTS.md) 为准。
+硬件和软件环境以 [benchmark_results/ENVIRONMENT.json](benchmark_results/ENVIRONMENT.json) 为准。
 
 ## 清理说明
 

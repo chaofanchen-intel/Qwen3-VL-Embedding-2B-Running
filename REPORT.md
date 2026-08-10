@@ -20,6 +20,29 @@ benchmark 计划、输入定义、输出维度定义和实测结果。原始结�
 `text` 是纯文本 embedding，`image` 是纯图片 embedding，`fused` 是同一次调用中的
 text + image embedding。每次调用返回一个 `[1, D]` 向量。
 
+## 1.1 硬件与软件环境
+
+本 benchmark 的完整环境快照见
+[benchmark_results/ENVIRONMENT.json](benchmark_results/ENVIRONMENT.json)。关键硬件和软件如下：
+
+| 项目 | 值 |
+|---|---|
+| CPU | Intel Core Ultra 7 356H，Panther Lake-P，16 cores / 16 logical CPUs |
+| GPU | Intel Graphics integrated GPU，PCI `0000:00:02.0`，device `0xb0a0`，xe driver |
+| Xe/GPU execution | OpenVINO 32 execution units，OpenCL 32 compute units，VTune 32 XVE |
+| GPU memory | 30,705,451,008 bytes，约 28.6 GiB（OpenVINO/OpenCL 报告值） |
+| System RAM | 32 GiB class，OS `MemTotal` 30.89 GiB |
+| RAM speed | DDR5-5600（用户提供；当前无 root DMI 权限，未独立验证） |
+| Swap | 8 GiB |
+| OS/kernel | Ubuntu 24.04.4 LTS / Linux 7.0.0-28-generic |
+| OpenVINO | 2026.3.0，runtime build `2026.3.0-22452-c2638477a62-qwen-ttft-optimizations` |
+| GenAI | 2026.3.0.0 patched Qwen3-VL build |
+| Python | 3.12.3，`qwen_env` |
+| Power policy | `intel_pstate` active，governor `powersave` |
+
+benchmark 的 repeat/warmup、精度、设备、文本长度、图像尺寸和 batch 配置也在该 JSON
+中保存，结果页顶部同时展示环境摘要。
+
 ## 2. 运行前提和修复边界
 
 模型由官方路径导出：
@@ -328,6 +351,14 @@ Qwen3 的 multimodal API 不支持 GME 风格的一次调用内逐行 `(text_i, 
 附加到每条文本。该差异和完整解释见文档 benchmark README。
 
 ## 11. 质量与部署前检查
+
+## 12. PA/SDPA backend 结论
+
+Qwen3-VL-Embedding-2B 不使用 Qwen3.5 生成式 `VLMPipeline` 的 PA/SDPA backend switch。
+它由 `EmbeddingPipeline` 直接编译 stateless language/vision embedding IR；当前
+language/vision graph 含 `ScaledDotProductAttention`，不含 `PagedAttentionExtension`。
+完整源码调用链、官方默认 PA 的适用范围和为什么不补跑 PA/SDPA A/B 见
+[GME_Qwen3VL_Embedding_PA_SDPA_调查.md](../benchmark/tests/GME_Qwen3VL_Embedding_PA_SDPA_调查.md)。
 
 本 benchmark 只验证可运行性和性能，不替代以下检查：
 

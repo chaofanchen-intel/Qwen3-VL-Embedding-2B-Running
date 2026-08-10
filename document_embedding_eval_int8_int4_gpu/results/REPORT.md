@@ -4,6 +4,23 @@ Document: `/home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running/060_OT_Do
 
 All model measurements use patched OpenVINO GenAI 2026.3, GPU, native 2048-dimensional output.
 
+## Hardware and software environment
+
+The complete machine-readable environment snapshot is shared with the main benchmark at
+[../../benchmark_results/ENVIRONMENT.json](../../benchmark_results/ENVIRONMENT.json).
+
+| Category | Value |
+|---|---|
+| CPU | Intel Core Ultra 7 356H, 16 cores / 16 logical CPUs |
+| GPU | Intel Graphics integrated GPU, PCI `0000:00:02.0`, device `0xb0a0`, Linux `xe` driver |
+| GPU execution | 32 OpenVINO execution units, 32 OpenCL compute units, 32 VTune XVEs |
+| GPU memory | Approximately 28.6 GiB reported by OpenVINO/OpenCL |
+| Host memory | 32 GiB class, OS `MemTotal` 30.89 GiB, swap 8 GiB |
+| RAM speed | DDR5-5600 user-provided; not independently verified through current non-root DMI access |
+| OS / kernel | Ubuntu 24.04.4 LTS / Linux 7.0.0-28-generic |
+| Runtime | OpenVINO 2026.3.0 + patched OpenVINO GenAI 2026.3.0.0 |
+| Python | 3.12.3 in `qwen_env` |
+
 ## Performance
 
 Text representations use true text batches. Image/fused representations preserve page pairs with per-item calls because the Qwen3 multimodal API does not accept paired `(text_i, image_i)` batches.
