@@ -45,6 +45,9 @@ text + image embedding。每次调用返回一个 `[1, D]` 向量。
 benchmark 的 repeat/warmup、精度、设备、文本长度、图像尺寸和 batch 配置也在该 JSON
 中保存，结果页顶部同时展示环境摘要。
 
+GME 与本模型在 32/128/512/1024 token 的严格交替性能分析见
+[CROSS_MODEL_PERFORMANCE_ANALYSIS.md](benchmark_results/CROSS_MODEL_PERFORMANCE_ANALYSIS.md)。
+
 ## 2. 运行前提和修复边界
 
 模型的完整 text/image/fused 数据流和任意 `M x N` 图片如何转成视觉 token 的技术说明
