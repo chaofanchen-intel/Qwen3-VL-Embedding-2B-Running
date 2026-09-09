@@ -1,0 +1,58 @@
+{
+  "model_dir": "/home/chaofan/model_benchmark/benchmark/models/Qwen3-VL-Embedding-2B-INT4",
+  "load_seconds": 8.87284200778231,
+  "encoding": {
+    "queries": {
+      "seconds": 6.205944245215505,
+      "cache_hit": false
+    },
+    "pages": {
+      "seconds": 602.6919390382245,
+      "cache_hit": false
+    },
+    "layouts": {
+      "seconds": 2143.510436313227,
+      "cache_hit": false
+    }
+  },
+  "evaluation": {
+    "close": {
+      "scope": "close",
+      "queries": 200,
+      "page": {
+        "recall@5": 0.8220833333333333,
+        "ndcg@5": 0.7118545010428182,
+        "recall@10": 0.89625,
+        "ndcg@10": 0.7412291289081123
+      },
+      "layout": {
+        "recall@5": 0.4115780217877753,
+        "ndcg@5": 0.3416956928753143,
+        "recall@10": 0.5185897846152063,
+        "ndcg@10": 0.3778704093545094
+      },
+      "layout_queries": 200,
+      "layout_excluded_queries": 0,
+      "layout_exclusions": []
+    },
+    "open": {
+      "scope": "open",
+      "queries": 200,
+      "page": {
+        "recall@5": 0.6954166666666666,
+        "ndcg@5": 0.5861380944403232,
+        "recall@10": 0.7458333333333332,
+        "ndcg@10": 0.6052446065387508
+      },
+      "layout": {
+        "recall@5": 0.35171038429569024,
+        "ndcg@5": 0.2974989216295566,
+        "recall@10": 0.45369699416185827,
+        "ndcg@10": 0.3316051779323249
+      },
+      "layout_queries": 200,
+      "layout_excluded_queries": 0,
+      "layout_exclusions": []
+    }
+  }
+}

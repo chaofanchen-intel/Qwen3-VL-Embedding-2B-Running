@@ -108,6 +108,26 @@ python run_eval.py
 Qwen3 multimodal API 不支持 GME 风格的 `(text_i, image_i)` 成对 batch，因此 image/fused
 保持逐页配对调用，并以 batch size 作为分组档位；具体口径见该目录的 README。
 
+## MMDocIR balanced_200
+
+完整 MMDocIR 评测使用本 repo 内独立的
+[`mmdocir_openvino_eval_qwen3/`](mmdocir_openvino_eval_qwen3/) runner。该目录自带
+`balanced_200.json`、Parquet 选行、Qwen3 backend、2048 维 vector cache、close/open
+page/layout metrics 和 per-query 输出，不导入其它模型 repo 的 evaluator、cache 或
+结果。默认只跑 200-query balanced subset，避免 full set 的长时间 image/layout 编码。
+
+启动方式：
+
+```bash
+cd /home/chaofan/model_benchmark/Qwen3-VL-Embedding-2B-Running
+ONEDNN_PRIMITIVE_CACHE_CAPACITY=0 \
+  ./mmdocir_openvino_eval_qwen3/run_balanced_200.sh --precisions INT8,INT4
+```
+
+`capacity=0` 只用于绕过当前 GPU/oneDNN primitive-cache 的已知挂死风险；生成的
+`summary.json` 会记录该环境变量，encoding 时间不作为不同 cache 配置之间的性能比较。
+结果只写入 `mmdocir_openvino_eval_qwen3/results/balanced_200/`。
+
 ## 结果与方法
 
 详细测试计划、计时口径、结果解读和生产迁移注意事项见
